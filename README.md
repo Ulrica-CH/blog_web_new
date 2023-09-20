@@ -4,6 +4,16 @@
 
 样式参考 ： [https://blog.eurkon.com/](https://blog.eurkon.com/)
 
+# 配置
+
+- node 16 vue3.3(新特性可使用) vite
+    - npm i pnpm -g
+    - pnpm i
+    - pnpm dev
+- Element Plus按需导入，icons导入（register-icons.ts）
+- pxToVw(字体问题后续可使用css变量解决)
+- 手写css不使用Tailwindcss
+
 # 规范
 
 - 提交 
