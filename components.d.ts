@@ -9,6 +9,9 @@ declare module 'vue' {
   export interface GlobalComponents {
     CommonFooter: typeof import('./src/components/CommonFooter/index.vue')['default']
     CommonHeader: typeof import('./src/components/CommonHeader/index.vue')['default']
+    CommonIcon: typeof import('./src/components/CommonIcon/index.vue')['default']
+    CommonLogo: typeof import('./src/components/CommonLogo/index.vue')['default']
+    CommonNav: typeof import('./src/components/CommonNav/index.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCheckbox: typeof import('element-plus/es')['ElCheckbox']
     ElForm: typeof import('element-plus/es')['ElForm']

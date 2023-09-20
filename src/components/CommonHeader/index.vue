@@ -1,8 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CommonLogo from '@/components/CommonLogo/index.vue'
+import CommonNav from '@/components/CommonNav/index.vue'
+</script>
 
 <template>
   <div class="common-header-wrap">
-    <div class="header">common-heade</div>
+    <div class="header">
+      <CommonLogo/>
+
+      <CommonNav/>
+    </div>
   </div>
 </template>
 
@@ -16,6 +23,7 @@
   background-color: $bg-white;
 
   .header {
+    @include flex($justify: space-between);
     margin: 0 auto;
     max-width: 1296px;
     height: 100%;

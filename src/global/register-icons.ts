@@ -3,6 +3,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 
 function registerIcons(app: App<Element>) {
   for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+    console.log(key)
     app.component(key, component)
   }
 }

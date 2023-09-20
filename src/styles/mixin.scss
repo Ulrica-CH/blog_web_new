@@ -14,3 +14,9 @@
     /* Chrome Safari */
   }
 }
+@mixin hoverCommStyle() {
+  background-color: $hover-color;
+  color: $text-color-white;
+  // cursor: pointer;
+  // transition: all 0.3s;
+}

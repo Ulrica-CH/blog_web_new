@@ -1,5 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 import Layout from '@/layout/index.vue'
+import {subRouter} from './subRouter'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
@@ -7,12 +8,7 @@ const router = createRouter({
       path: '/',
       component: Layout,
       redirect: '/home',
-      children: [
-        {
-          path: '/home',
-          component: () => import('@/views/home/index.vue')
-        }
-      ]
+      children: subRouter
     },
 
     {
