@@ -1,6 +1,16 @@
+
 $bg-back:rgba(0,0,0,.3);
 $bg-white:#f3f6fc;
 $hover-color:#3275b1;
+$active-color:#3275b1;
 $text-color-white:#fff;
-// $border-radios-10:;
+$card-bg: #fff;
 $border-radius-10: 10px;
+$box-shadow: 3px 6px 6px -3px rgba(45, 45, 45, .05);
+$tab-botton-bg: #f0f0f0;
+$card-border: 1px solid $tab-botton-bg;
+$card-border-dashed: 2px dashed var(--tab-button-hover-bg);
+$border-radius: 8px;
+
+$main-shadow: 3px 6px 6px -3px rgba(var(--r), var(--g), var(--b), .2);
+$main: rgb(var(--r), var(--g), var(--b));

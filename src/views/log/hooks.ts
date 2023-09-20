@@ -1,0 +1,22 @@
+export function useLogData() {
+  const activities = [
+    {
+      content: 'init 重构项目，首页 Header，home 部分内容',
+      timestamp: '2023-09-20'
+    },
+    {
+      content: '全局Scss，黑色主题Mixin；完善Mine页面，Log页面',
+      timestamp: '2023-09-19'
+    },
+    {
+      content: 'Github Actions 自动化部署，首页样式调整',
+      timestamp: '2023-09-18'
+    },
+    {
+      content: 'init 初始化博客',
+      timestamp: '2023-09-16'
+    }
+  ]
+
+  return [activities]
+}

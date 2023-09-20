@@ -8,10 +8,10 @@
 
 <style scoped lang="scss">
 .common-footer{
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    // position: fixed;
+    // left: 0;
+    // right: 0;
+    // bottom: 0;
 
     @include flex();
     height: 240px;

@@ -16,10 +16,12 @@ import CommonFooter from '@/components/CommonFooter/index.vue'
 <style scoped lang="scss">
 .layout {
   height: 100vh;
+  box-sizing: border-box;
   .main {
     margin: 60px auto 0;
     padding: 20px;
-    height: calc(100vh - 320px);
+    height: calc(100vh - 60px);
+    box-sizing: border-box;
   }
   .main,
   .pc {
