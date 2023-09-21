@@ -1,4 +1,6 @@
-export interface IAccount {
-    name:string,
-    password:string
+export interface IHomeGetStatistic {
+  articleCount: number
+  categoryCount: number
+  tagCount: number
+  userCount: number
 }

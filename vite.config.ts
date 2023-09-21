@@ -73,5 +73,38 @@ export default defineConfig({
         })
       ]
     }
+  },
+  // 服务端渲染
+  server: {
+    // 自动开浏览器
+    open: true,
+    // 热更新
+    hmr: {
+      overlay: false
+    },
+    // 是否开启 https
+    https: false,
+    // 端口号
+    port: 8080,
+    // host: '127.0.0.1',
+    // 本地跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8888',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      },
+      '/gitee': {
+        target: 'https://gitee.com/mrzym',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/gitee/, '')
+      },
+      '/wapi': {
+        //要访问的跨域的域名
+        target: 'http://mrzym.top:3000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/wapi/, '')
+      }
+    }
   }
 })
