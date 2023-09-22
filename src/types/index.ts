@@ -1,8 +1,11 @@
 export interface IHomeGetStatistic {
-  articleCount: number
-  categoryCount: number
-  tagCount: number
-  userCount: number
+  articleCount?: number
+  categoryCount?: number
+  tagCount?: number
+  userCount?: number
+}
+export interface IInfoCount {
+  infoCount?: IHomeGetStatistic
 }
 export interface IArticleList {
   current: string

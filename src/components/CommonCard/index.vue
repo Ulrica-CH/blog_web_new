@@ -1,18 +1,18 @@
-<script setup lang="ts">
-
-</script>
-
+<script setup lang="ts"></script>
 
 <template>
   <div class="common-card">
-    1
+    <slot />
   </div>
 </template>
 
-<style scoped lang="scss"> 
-.common-card{
-    padding:10px;
-    width: 100%;
-    background-color:$card-bg;
+<style scoped lang="scss">
+.common-card {
+  @include flex($align:flex-start,$direction: column);
+  margin-bottom:16px;
+  padding: 20px 20px;
+  background-color: $card-bg;
+  border-radius: $border-radius;
+  box-sizing: border-box;
 }
 </style>

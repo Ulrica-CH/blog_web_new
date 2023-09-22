@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useTopInfoPage } from '../hooks/homeTopInfoPage'
+import { useTopInfoPage } from '../hooks'
 const { leftBottomItem, toPath } = useTopInfoPage()
 </script>
 
@@ -124,3 +124,4 @@ const { leftBottomItem, toPath } = useTopInfoPage()
   }
 }
 </style>
+../hooks

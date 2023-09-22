@@ -15,7 +15,7 @@ import CommonFooter from '@/components/CommonFooter/index.vue'
 
 <style scoped lang="scss">
 .layout {
-  height: 100vh;
+  // height: 100vh;
   box-sizing: border-box;
   .main {
     margin: 60px auto 0;

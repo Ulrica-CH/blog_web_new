@@ -1,42 +1,79 @@
 <script setup lang="ts">
-import type { IAvatarInfo } from '../props'
-
+import CommonCard from '@/components/CommonCard/index.vue'
+import { useAvatarInfo } from '../hooks'
+import type { IAvatarInfo } from '../props';
 const props = defineProps<IAvatarInfo>()
+const {countList} = useAvatarInfo()
 </script>
 
 <template>
-  <div class="acatar-info">
-    <div class="item top">
-      <div class="geo">晚上好</div>
+  <CommonCard>
+    <div class="acatar-info">
       <div class="img">
         <img :src="props?.config?.avatar_bg" alt="" />
+        <div class="circle"></div>
+      </div>
+
+      <div class="name">MichstaBe</div>
+      <div class="notice">{{ props?.config?.blog_notice }}</div>
+      <div class="category">
+        <div
+          v-for="(item, index) in countList"
+          :key="item.label"
+          class="category-item"
+        >
+          <span class="label">{{ item.label }}</span>
+          <span class="count">{{ item.count }}</span>
+        </div>
       </div>
     </div>
-
-    <div class="item name">MichstaBe</div>
-
-    <div class="item desc">
-      在这里我将记录学习过程中的笔记、分享一些经验与想法。希望能够帮助到您！
-    </div>
-
-    <div class="item category">
-      <div class="fir category-item">文章</div>
-      <div class="sec category-item">标签</div>
-      <div class="third category-item">分类</div>
-    </div>
-
-    <div class="item link">5</div>
-  </div>
+  </CommonCard>
 </template>
 
 <style scoped lang="scss">
 .acatar-info {
-  @include flex($direction: column);
-  padding: 20px 20px;
-  background-color: $card-bg;
-  border-radius: $border-radius;
-  box-sizing: border-box;
+  @include flex($justify: center, $direction: column);
+  width: 100%;
+  .img {
+    position: relative;
+    margin-right: 16px;
+    width: 120px;
+    height: 120px;
+    // background: var(--global-bg);
+    border-radius: $border-radius;
 
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 50%;
+      transition: all 0.3s;
+      &:hover {
+        transform: rotate(360deg);
+      }
+    }
+    .circle {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+      width: 26px;
+      height: 26px;
+      background-color: #6adf8f;
+      border-radius: 50%;
+    }
+  }
+
+  .name {
+    margin: 16px 0;
+    font-size: 22px;
+  }
+  .notice {
+    margin-bottom: 16px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    border-bottom: 1px;
+    // border-bottom: var(--card-border);
+  }
   .item {
     padding: 10px;
     background: var(--global-bg);
@@ -53,6 +90,7 @@ const props = defineProps<IAvatarInfo>()
     @include flex($justify: space-between);
     .geo,
     .img {
+      position: relative;
       margin-right: 16px;
       width: 50%;
       height: 100%;
@@ -64,9 +102,6 @@ const props = defineProps<IAvatarInfo>()
         object-fit: contain;
       }
     }
-    .img {
-      margin-right: 0;
-    }
   }
   .name {
     @include flex();
@@ -76,18 +111,40 @@ const props = defineProps<IAvatarInfo>()
     border-radius: $border-radius;
   }
   .category {
-    background-color: #fff;
+    width: 100%;
+    padding: 0 20px;
+    font-size: 18px;
     @include flex($justify: space-between);
     .category-item {
-      width: 30%;
-      padding: 10px;
-      height: 80px;
-      margin-right: 16px;
-      background: var(--global-bg);
-      border-radius: $border-radius;
+      @include flex($direction: column);
+      position: relative;
+      width: 33%;
+      // margin-right: 16px;
+      padding-bottom: 10px;
       box-sizing: border-box;
+      text-align: center;
+      cursor: pointer;
+      .label {
+        margin-bottom: 10px;
+        font-size: 18px;
+      }
       &:last-child {
         margin-right: 0;
+      }
+      &:not(:last-child) {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 10px;
+          right: 0;
+          display: inline-block;
+          width: 2px;
+          height: 80%;
+          background-color: #ccc;
+        }
+      }
+      &:hover {
+        color: var(--main);
       }
     }
   }

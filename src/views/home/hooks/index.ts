@@ -5,10 +5,14 @@ import type {
   IArticleList,
   IArticle,
   IHomeGetStatistic,
-  IConfig
+  IConfig,
+  IInfoCount
 } from '@/types'
-import { reactive, ref } from 'vue'
+import { reactive, ref, useAttrs,defineProps} from 'vue'
 import { useRouter } from 'vue-router'
+import type { IAvatarInfo } from '../props'
+
+/** 头部信息 */
 export function useTopInfoPage() {
   const leftBottomItem = [
     { title: '分类', path: '/category' },
@@ -22,6 +26,7 @@ export function useTopInfoPage() {
   return { leftBottomItem, toPath }
 }
 
+/** 文章相关 */
 export function useArticle() {
   /** 文章 */
   const param = reactive({
@@ -46,14 +51,17 @@ export function useArticle() {
   return { articleList, articleTotal, _homeGetArticleList }
 }
 
+/** 左侧统计 */
 export function useRightCount() {
+  const infoCount = ref<IHomeGetStatistic>({})
   /** 分类标签文章 统计 */
   const _homeGetStatistic = async () => {
-    const res: IHomeGetStatistic = await homeGetStatistic()
+    infoCount.value = await homeGetStatistic()
   }
-  return { _homeGetStatistic }
+  return { infoCount, _homeGetStatistic }
 }
 
+/** 左侧配置 */
 export function useRightConfig() {
   let config = ref<IConfig>({
     createdAt: '',
@@ -77,4 +85,16 @@ export function useRightConfig() {
     config.value = res
   }
   return { config, _homeGetConfig }
+}
+/**  */
+export function useAvatarInfo() {
+  // const props = defineProps<IAvatarInfo>()
+  const attrs: IInfoCount = useAttrs()
+  const countList = [
+    { label: '文章', count: attrs.infoCount?.articleCount },
+    { label: ' 分类', count: attrs.infoCount?.categoryCount },
+    { label: '标签', count: attrs.infoCount?.tagCount }
+  ]
+
+  return {countList}
 }
