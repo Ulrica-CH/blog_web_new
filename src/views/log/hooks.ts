@@ -1,6 +1,10 @@
 export function useLogData() {
   const activities = [
     {
+      content: 'axios封装，接口调通，文章卡片样式，个人栏信息；不足：css书写混乱，js 逻辑还可以',
+      timestamp: '2023-09-22'
+    },
+    {
       content: 'init 重构项目，首页 Header，home 部分内容',
       timestamp: '2023-09-20'
     },
