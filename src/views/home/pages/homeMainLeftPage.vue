@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import {IMainLeftPageProps} from '../props'
+defineProps<IMainLeftPageProps>()
 import AvatarInfo from '../components/AvatarInfo.vue'
 </script>
 
 <template>
   <div class="main-left-page">
-    <AvatarInfo />
+    <AvatarInfo :config="config" />
   </div>
 </template>
 

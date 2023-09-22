@@ -4,16 +4,19 @@ import homeNoticePage from './pages/homeNoticePage.vue'
 import homeTopInfoPage from './pages/homeTopInfo.vue'
 import homeMainPage from './pages/homeMainPage.vue'
 
-import { useArticle, useRightCount } from './hooks/homeTopInfoPage'
+import { useArticle, useRightCount,useRightConfig } from './hooks/homeTopInfoPage'
 
 /** 文章 */
 const { articleList, articleTotal, _homeGetArticleList } = useArticle()
 /** 右侧统计 */
 const { _homeGetStatistic } = useRightCount()
+/** 网站配置 */
+const {config, _homeGetConfig } = useRightConfig()
 
 onMounted(async () => {
   await _homeGetStatistic()
   await _homeGetArticleList('init')
+  await _homeGetConfig()
 })
 </script>
 
@@ -24,7 +27,7 @@ onMounted(async () => {
     <!-- home 顶部信息 -->
     <homeTopInfoPage />
     <!-- 文章 侧边栏 -->
-    <homeMainPage :articleList="articleList" />
+    <homeMainPage :articleList="articleList" :config="config"/>
   </div>
 </template>
 

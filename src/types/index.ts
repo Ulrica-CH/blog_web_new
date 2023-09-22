@@ -28,3 +28,20 @@ export interface IArticle {
   categoryName: string
   tagNameList: string[]
 }
+
+export interface IConfig {
+  createdAt: string
+  updatedAt: string
+  id: number
+  blog_name: string
+  blog_avatar: string
+  avatar_bg: string
+  personal_say: string
+  blog_notice: string
+  qq_link: string
+  we_chat_link: string
+  github_link: string
+  git_ee_link: string
+  bilibili_link: string
+  view_time: number
+}

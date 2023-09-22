@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import CommonArticleItem from '@/components/CommonArticleItem/index.vue'
-import { IMainRightPageProps } from './props'
+import { IMainRightPageProps } from '../props'
 defineProps<IMainRightPageProps>()
 </script>
 

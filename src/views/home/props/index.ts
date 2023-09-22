@@ -1,5 +1,4 @@
-import type { IArticle, IConfig} from "@/types";
-
+import type { IArticle, IConfig } from '@/types'
 export interface IMainPageProps {
   articleList: IArticle[]
   config: IConfig
@@ -9,4 +8,7 @@ export interface IMainLeftPageProps {
 }
 export interface IMainRightPageProps {
   articleList: IArticle[]
+}
+export interface IAvatarInfo {
+  config: IConfig
 }

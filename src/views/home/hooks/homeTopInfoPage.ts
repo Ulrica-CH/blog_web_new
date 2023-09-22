@@ -1,6 +1,12 @@
 import { homeGetArticleList } from '@/api/article'
 import { homeGetStatistic } from '@/api/home'
-import type { IArticleList, IArticle, IHomeGetStatistic } from '@/types'
+import { homeGetConfig } from '@/api/config'
+import type {
+  IArticleList,
+  IArticle,
+  IHomeGetStatistic,
+  IConfig
+} from '@/types'
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 export function useTopInfoPage() {
@@ -37,7 +43,7 @@ export function useArticle() {
     articleTotal.value = res?.total
   }
 
-  return { articleList, articleTotal,_homeGetArticleList }
+  return { articleList, articleTotal, _homeGetArticleList }
 }
 
 export function useRightCount() {
@@ -46,4 +52,29 @@ export function useRightCount() {
     const res: IHomeGetStatistic = await homeGetStatistic()
   }
   return { _homeGetStatistic }
+}
+
+export function useRightConfig() {
+  let config = ref<IConfig>({
+    createdAt: '',
+    updatedAt: '',
+    id: 0,
+    blog_name: '',
+    blog_avatar: '',
+    avatar_bg: '',
+    personal_say: '',
+    blog_notice: '',
+    qq_link: '',
+    we_chat_link: '',
+    github_link: '',
+    git_ee_link: '',
+    bilibili_link: '',
+    view_time: 0
+  })
+  const _homeGetConfig = async () => {
+    const res = await homeGetConfig()
+    console.log(res)
+    config.value = res
+  }
+  return { config, _homeGetConfig }
 }

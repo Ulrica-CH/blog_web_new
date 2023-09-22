@@ -20,7 +20,7 @@ import CommonFooter from '@/components/CommonFooter/index.vue'
   .main {
     margin: 60px auto 0;
     padding: 20px;
-    height: calc(100vh - 60px);
+    // height: calc(100vh - 60px);
     box-sizing: border-box;
   }
   .main,

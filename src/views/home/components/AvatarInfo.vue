@@ -1,10 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import type { IAvatarInfo } from '../props'
+
+const props = defineProps<IAvatarInfo>()
+</script>
 
 <template>
   <div class="acatar-info">
     <div class="item top">
       <div class="geo">晚上好</div>
-      <div class="img">图片</div>
+      <div class="img">
+        <img :src="props?.config?.avatar_bg" alt="" />
+      </div>
     </div>
 
     <div class="item name">MichstaBe</div>
@@ -48,11 +54,15 @@
     .geo,
     .img {
       margin-right: 16px;
-
       width: 50%;
       height: 100%;
       background: var(--global-bg);
       border-radius: $border-radius;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
     }
     .img {
       margin-right: 0;

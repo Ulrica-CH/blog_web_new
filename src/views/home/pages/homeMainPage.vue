@@ -2,7 +2,7 @@
 import homeMainLeftPage from './homeMainLeftPage.vue';
 import homeMainRightPageVue from './homeMainRightPage.vue';
 
-import { IMainPageProps } from './props'
+import { IMainPageProps } from '../props'
 
 const props = defineProps<IMainPageProps>()
 </script>
@@ -10,7 +10,7 @@ const props = defineProps<IMainPageProps>()
 
 <template>
   <div class="home-main-page"> 
-    <homeMainLeftPage/>
+    <homeMainLeftPage :config="config"/>
     <homeMainRightPageVue :articleList="articleList"/>
     </div>
 </template>
