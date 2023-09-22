@@ -99,5 +99,6 @@ service.interceptors.response.use(
 )
 export default async <T = any>(config: AxiosRequestConfig) => {
   const res = await service(config)
-  return res.data as T
+  console.log(res)
+  return res.result as T
 }

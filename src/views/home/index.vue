@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import {onMounted} from 'vue'
-import homeNoticePage from './pages/homeNoticePage.vue';
-import homeTopInfoPage from './pages/homeTopInfo.vue';
-import homeMainPage from './pages/homeMainPage.vue';
+import { onMounted } from 'vue'
+import homeNoticePage from './pages/homeNoticePage.vue'
+import homeTopInfoPage from './pages/homeTopInfo.vue'
+import homeMainPage from './pages/homeMainPage.vue'
 
-import { homeGetStatistic } from '@/api/home'
-import type { IHomeGetStatistic } from '@/types'
+import { useArticle, useRightCount } from './hooks/homeTopInfoPage'
+
+/** 文章 */
+const { articleList, articleTotal, _homeGetArticleList } = useArticle()
+/** 右侧统计 */
+const { _homeGetStatistic } = useRightCount()
 
 onMounted(async () => {
-  const res:IHomeGetStatistic =  await homeGetStatistic()
+  await _homeGetStatistic()
+  await _homeGetArticleList('init')
 })
 </script>
 
 <template>
-    <div class="home">
-        <!-- 公告 -->
-        <homeNoticePage/>
-        <!-- home 顶部信息 -->
-        <homeTopInfoPage/>
-        <!-- 文章 侧边栏 -->
-        <homeMainPage/>
-    </div>
+  <div class="home">
+    <!-- 公告 -->
+    <homeNoticePage />
+    <!-- home 顶部信息 -->
+    <homeTopInfoPage />
+    <!-- 文章 侧边栏 -->
+    <homeMainPage :articleList="articleList" />
+  </div>
 </template>
 
-<style scoped lang="scss">
-.home{
-    // @include flex();
-    // color: $white-back;
-}
-</style>
+<style scoped lang="scss"></style>

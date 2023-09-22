@@ -10,12 +10,12 @@ import AvatarInfo from '../components/AvatarInfo.vue'
 
 <style scoped lang="scss">
 .main-left-page {
-  width: 360px;
+  width: 300px;
   margin-right: 20px;
   // background-color: #fff;
 }
 .main-left-page,
 .pc {
-  min-width: 360px;
+  min-width: 300px;
 }
 </style>

@@ -4,28 +4,29 @@
   --g: 119;
   --b: 179;
 
-  --global-bg: #F2F6FC;
-  --global-bg-lighter: rgba(242, 246, 252, .4);
-  --global-bg-bolder: rgba(242, 246, 252, .8);
+  --global-bg: #f2f6fc;
+  --global-bg-lighter: rgba(242, 246, 252, 0.4);
+  --global-bg-bolder: rgba(242, 246, 252, 0.8);
   --r: 22;
   --g: 119;
   --b: 179;
   --main: rgb(var(--r), var(--g), var(--b));
   --second: var(--white);
   --cover-bg: rgb(var(--r), var(--g), var(--b));
-  --main-lighter: rgba(var(--r), var(--g), var(--b), .4);
-  --main-bolder: rgba(var(--r), var(--g), var(--b), .8);
-  --box-shadow: 3px 6px 6px -3px rgba(45, 45, 45, .05);
+  --main-lighter: rgba(var(--r), var(--g), var(--b), 0.4);
+  --main-bolder: rgba(var(--r), var(--g), var(--b), 0.8);
+  --box-shadow: 3px 6px 6px -3px rgba(45, 45, 45, 0.05);
   /* --box-shadow: 0 2px 3px 1px rgba(45, 45, 45, .05); */
-  --main-shadow: 3px 6px 6px -3px rgba(var(--r), var(--g), var(--b), .2);
+  --main-shadow: 3px 6px 6px -3px rgba(var(--r), var(--g), var(--b), 0.2);
   /* --main-shadow: 0 2px 3px 1px rgba(var(--r), var(--g), var(--b), .2); */
   --card-border: 1px solid var(--tab-botton-bg);
   --card-border-dashed: 2px dashed var(--tab-button-hover-bg);
-  --border-radius: .5rem;
-  --light-text: #FF7242;
-  --light-text-bg: rgba(255, 149, 63, .1);
+  --border-radius: 0.5rem;
+  --light-text: #ff7242;
+  --light-text-bg: rgba(255, 149, 63, 0.1);
   --backdrop-filter: saturate(240%) blur(20px);
-  
+
+      --text-highlight-color: #1f2d3d;
 }
 
 *,
@@ -40,10 +41,23 @@ body {
   min-height: 100vh;
   color: var(--color-text);
   background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
   line-height: 1.6;
-  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-    Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Fira Sans',
+    'Droid Sans',
+    'Helvetica Neue',
+    sans-serif;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
