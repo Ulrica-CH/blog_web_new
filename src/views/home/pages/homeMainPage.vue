@@ -9,6 +9,7 @@ const props = defineProps<IMainPageProps>()
 <template>
   <div class="home-main-page"> 
     <homeMainLeftPage v-bind="$attrs" :config="config"/>
+    <!-- <homeMainLeftPage :config="config"/> -->
     <homeMainRightPageVue :articleList="articleList"/>
     
     </div>

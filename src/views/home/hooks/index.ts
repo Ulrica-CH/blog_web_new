@@ -8,7 +8,7 @@ import type {
   IConfig,
   IInfoCount
 } from '@/types'
-import { reactive, ref, useAttrs,defineProps} from 'vue'
+import { reactive, ref, useAttrs, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import type { IAvatarInfo } from '../props'
 
@@ -88,13 +88,30 @@ export function useRightConfig() {
 }
 /**  */
 export function useAvatarInfo() {
-  // const props = defineProps<IAvatarInfo>()
-  const attrs: IInfoCount = useAttrs()
-  const countList = [
-    { label: '文章', count: attrs.infoCount?.articleCount },
-    { label: ' 分类', count: attrs.infoCount?.categoryCount },
-    { label: '标签', count: attrs.infoCount?.tagCount }
-  ]
+  const attrs = useAttrs()
+  const countList = reactive<countItem[]>([
+    { label: '文章', key: 'articleCount', count: 0 },
+    { label: ' 分类', key: 'categoryCount', count: 0 },
+    { label: '标签', key: 'tagCount', count: 0 }
+  ])
+  type HomeStatisticUpdate = {
+    [key: string]: any
+  }
 
-  return {countList}
+  type countItem = {
+    label: string
+    key: string
+    count: number
+  }
+
+  watch(
+    () => attrs.infoCount,
+    (newVal: IHomeGetStatistic & HomeStatisticUpdate) => {
+      countList.forEach(item => {
+        item.count = newVal[item.key]
+      })
+    }
+  )
+
+  return { countList }
 }
