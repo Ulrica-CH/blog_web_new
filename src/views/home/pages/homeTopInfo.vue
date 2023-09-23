@@ -97,7 +97,7 @@ const { leftBottomItem, toPath } = useTopInfoPage()
     transition: var(--transition-normal);
     cursor: pointer;
     &:hover {
-      //   border-color: var(--main);
+      //   border-color: var(--xy-main);
       box-shadow: var(--main-shadow);
     }
     :deep(.el-carousel) {

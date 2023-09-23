@@ -31,7 +31,7 @@ defineProps<Partial<IArticleItem>>()
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  box-sizing: border-box;
+  border: var(--base-border);
   overflow: hidden;
   transition: var(--transition-normal);
   cursor: pointer;
@@ -39,6 +39,7 @@ defineProps<Partial<IArticleItem>>()
   &:hover {
     box-shadow: var(--main-shadow);
     transform: translateY(-6px);
+    border: var(--hover-border);
     .article-cover {
       position: relative;
       transform: scale(1.12);
@@ -101,7 +102,7 @@ defineProps<Partial<IArticleItem>>()
   .category {
     @include positionA(10px, _, _, 10px);
     padding: 4px;
-    background-color: var(--main);
+    background-color: var(--xy-main);
     color: var(--text-color-white);
     border-radius: var(--border-radius);
   }

@@ -13,6 +13,10 @@
   padding: 20px 20px;
   background-color: var(--card-bg);
   border-radius: var(--border-radius);
-  box-sizing: border-box;
+  transition:var(--transition-normal);
+  border: var(--base-border);
+  &:hover{
+    border: var(--hover-border);
+  }
 }
 </style>

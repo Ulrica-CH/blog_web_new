@@ -53,7 +53,7 @@ const [toPath] = useNavRouter()
   }
   .router-link-active {
     position: relative;
-    color: var(--active-color);
+    color: var(--xy-main);
 
     &::after {
       content: '';
@@ -61,7 +61,7 @@ const [toPath] = useNavRouter()
       display: inline-block;
       width: 58px;
       height: 2px;
-      background-color: var(--active-color);
+      background-color: var(--xy-main);
     }
   }
 }

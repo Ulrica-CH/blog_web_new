@@ -15,7 +15,7 @@
   }
 }
 @mixin hoverCommStyle() {
-  background-color: var(--hover-color);
+  background-color: var(--xy-main);
   color: var(--text-color-white);
   // cursor: pointer;
   // transition: var(--transition-normal);

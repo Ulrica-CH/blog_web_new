@@ -23,7 +23,7 @@ const { showIcon, mouseenter, mouseout } = useToggleLogo()
   transition: var(--transition-normal);
 
   &:hover {
-    background-color: var(--hover-color);
+    background-color: var(--xy-main);
     color: var(--text-color-white);
   }
   .title {

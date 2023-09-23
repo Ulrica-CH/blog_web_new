@@ -8,7 +8,9 @@
   --r: 22;
   --g: 119;
   --b: 179;
+  /* --main: rgb(var(--r), var(--g), var(--b)); */
   --main: rgb(var(--r), var(--g), var(--b));
+  --xy-main: #4976f5;
   --main-lighter: rgba(var(--r), var(--g), var(--b), 0.4);
   --main-bolder: rgba(var(--r), var(--g), var(--b), 0.8);
   --text-highlight-color: #1f2d3d;
@@ -33,6 +35,8 @@
   --card-border: 1px solid var(--tab-botton-bg);
   --card-border-dashed: 2px dashed var(--tab-button-hover-bg);
   /* boder */
+  --base-border: 1px solid #e0e3ed;
+  --hover-border: 1px solid var(--xy-main);
   --card-border: 1px solid var(--tab-botton-bg);
   --card-border-dashed: 2px dashed var(--tab-button-hover-bg);
   --cover-bg: rgb(var(--r), var(--g), var(--b));

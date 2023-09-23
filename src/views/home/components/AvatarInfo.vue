@@ -105,17 +105,15 @@ const { countList } = useAvatarInfo()
       &:not(:last-child) {
         &::after {
           content: '';
-          position: absolute;
-          top: 10px;
-          right: 0;
+          @include positionA(10px, 0, _, _);
           display: inline-block;
           width: 2px;
           height: 80%;
-          background-color: #ccc;
+          background-color: #f5f5f5;
         }
       }
       &:hover {
-        color: var(--main);
+        color: var(--xy-main);
       }
     }
   }

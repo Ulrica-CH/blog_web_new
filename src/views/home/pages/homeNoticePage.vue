@@ -24,7 +24,7 @@ import CommonIcon from '@/components/CommonIcon/index.vue'
     box-sizing: border-box;
     transition: all .3s;
     &:hover {
-      border-color: var(--main);
+      border-color: var(--xy-main);
       box-shadow: var(--main-shadow);
     }
     .content{
