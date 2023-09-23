@@ -1,12 +1,18 @@
 <script setup lang="ts">
 import type { IArticleItem } from './props'
+import { useRouter } from 'vue-router'
+import { useArticleItem } from './hooks.ts'
 defineProps<Partial<IArticleItem>>()
+const [operate] = useArticleItem()
+/* 文章操作 end */
 </script>
 
 <template>
   <div class="comm-artice-item">
     <img class="article-cover" :src="article?.article_cover" alt="" />
-    <div class="title item">{{ article?.article_title }}</div>
+    <div class="title item" @click="operate('detail', article)">
+      {{ article?.article_title }}
+    </div>
     <div class="category">{{ article?.categoryName }}</div>
     <div class="tags item">
       <span
@@ -35,7 +41,7 @@ defineProps<Partial<IArticleItem>>()
   overflow: hidden;
   transition: var(--transition-normal);
   cursor: pointer;
-
+  color: var(--base-text-color-black);
   &:hover {
     box-shadow: var(--main-shadow);
     transform: translateY(-6px);
@@ -94,7 +100,7 @@ defineProps<Partial<IArticleItem>>()
     padding: 0 20px;
     width: var(--w-100-percent);
     font-size: 14px;
-    color: var(--text-color-black);
+    color: var(--base-text-color-black);
     word-wrap: break-word;
     transform: translateX(-500px);
     transition: var(--transition-normal);
@@ -103,7 +109,7 @@ defineProps<Partial<IArticleItem>>()
     @include positionA(10px, _, _, 10px);
     padding: 4px;
     background-color: var(--xy-main);
-    color: var(--text-color-white);
+    color: var(--base-text-color-white);
     border-radius: var(--border-radius);
   }
   .date {

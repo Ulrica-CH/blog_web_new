@@ -2,21 +2,22 @@
 import { subRouter } from '@/router/subRouter'
 import CommonIcon from '@/components/CommonIcon/index.vue'
 import { RouterLink } from 'vue-router'
-import { useNavRouter } from './hooks'
+import { useNavRouter ,useComputed} from './hooks'
 const [toPath] = useNavRouter()
+const [routerArr] = useComputed(subRouter)
 </script>
 
 <template>
   <div class="common-nav">
     <div
       class="nav-item"
-      v-for="(item, index) in subRouter"
+      v-for="(item, index) in routerArr"
       :key="index"
       @click="toPath(item.path)"
     >
-      <CommonIcon :icon="item.mate.icon" size="18" />
+      <CommonIcon :icon="item.meta?.icon" size="18" />
       <RouterLink class="router-link" :to="item.path">{{
-        item.mate.title
+        item.meta?.title
       }}</RouterLink>
     </div>
   </div>

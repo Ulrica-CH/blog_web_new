@@ -24,12 +24,11 @@ import WebsiteStatistics from '../components/WebsiteStatistics.vue'
 
 <style scoped lang="scss">
 .main-left-page {
-  width: 240px;
+  width: 300px;
   margin-right: 20px;
-  // background-color: #fff;
 }
 .main-left-page,
 .pc {
-  min-width: 240px;
+  min-width: 300px;
 }
 </style>

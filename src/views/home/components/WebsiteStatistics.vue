@@ -12,5 +12,7 @@ import CommonCard from '@/components/CommonCard/index.vue'
 
 <style scoped lang="scss"> 
 .web-statistics{
+  color: var(--base-text-color-black);
+
 }
 </style>

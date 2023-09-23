@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory, type RouteRecord } from 'vue-router'
 import Layout from '@/layout/index.vue'
 import {subRouter} from './subRouter'
 const router = createRouter({

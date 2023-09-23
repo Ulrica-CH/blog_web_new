@@ -6,16 +6,16 @@ import CommonNav from '@/components/CommonNav/index.vue'
 <template>
   <div class="common-header-wrap">
     <div class="header">
-      <CommonLogo/>
+      <CommonLogo />
 
-      <CommonNav/>
+      <CommonNav />
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .common-header-wrap {
-  z-index:9999;
+  z-index: 9999;
   position: fixed;
   left: 0;
   right: 0;
@@ -28,6 +28,7 @@ import CommonNav from '@/components/CommonNav/index.vue'
     margin: 0 auto;
     max-width: 1296px;
     height: var(--h-100-percent);
+    color: var(--base-text-color-black);
   }
 }
 </style>

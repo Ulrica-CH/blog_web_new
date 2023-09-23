@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import homeNoticePage from './pages/homeNoticePage.vue'
-import homeTopInfoPage from './pages/homeTopInfo.vue'
 import homeMainPage from './pages/homeMainPage.vue'
 
 import {
@@ -26,10 +25,9 @@ onMounted(async () => {
 
 <template>
   <div class="home">
-    <!-- 公告 -->
-    <homeNoticePage />
+
     <!-- home 顶部信息 -->
-    <homeTopInfoPage />
+    <homeNoticePage />
     <!-- 文章 侧边栏 -->
     <homeMainPage
       :infoCount="infoCount"
@@ -40,4 +38,3 @@ onMounted(async () => {
 </template>
 
 <style scoped lang="scss"></style>
-./hooks

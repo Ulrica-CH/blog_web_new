@@ -47,12 +47,12 @@ export const getRecommendArticleById = (id) => {
 };
 
 /** 根据文章id获取文章详情*/
-export const getArticleById = (id) => {
-  return new Promise((resolve, reject) => {
-    http.get(`/api/article/getArticleById/${id}`, {}).then((res) => {
-      resolve(res);
-    });
-  });
+export const getArticleById = (params?:object) => {
+  return request<any>({
+    method: 'get',
+    url: '/api/article/getArticleById',
+    params
+  })
 };
 
 /** 获取热门文章*/
@@ -92,10 +92,15 @@ export const cancelArticleLike = (id) => {
 };
 
 /** 文章增加阅读时长 */
-export const readingDuration = (id, duration) => {
-  return new Promise((resolve, reject) => {
-    http.put(`/api/article/addReadingDuration/${id}/${duration}`, {}).then((res) => {
-      resolve(res);
-    });
-  });
+export const readingDuration = (params?:object) => {
+  return request<IArticleList>({
+    method: 'get',
+    url: '/api/article/addReadingDuration',
+    params
+  })
+  // return new Promise((resolve, reject) => {
+  //   http.put(`/api/article/addReadingDuration/${id}/${duration}`, {}).then((res) => {
+  //     resolve(res);
+  //   });
+  // });
 };

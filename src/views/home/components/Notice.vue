@@ -2,14 +2,19 @@
 import CommonCard from '@/components/CommonCard/index.vue'
 </script>
 
-
 <template>
-  <CommonCard>
-    这是图标 这是一天条告
-  </CommonCard>
+  <CommonCard> 
+    
+    <div class="notice">
+      这是图标 这是一天条告
+    </div>
+    </CommonCard>
 </template>
 
-<style scoped lang="scss"> 
-.notice{
+<style scoped lang="scss">
+.notice {
+  // padding: 10px;
+  // color: var(--base-text-color-black);
+  // border: var(--base-border);
 }
 </style>

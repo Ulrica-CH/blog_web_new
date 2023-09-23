@@ -37,6 +37,8 @@ const { countList } = useAvatarInfo()
 .acatar-info {
   @include flex($justify: center, $direction: column);
   width: var(--w-100-percent);
+  color: var(--base-text-color-black);
+
   .img {
     position: relative;
     margin-right: 16px;
@@ -92,7 +94,6 @@ const { countList } = useAvatarInfo()
       position: relative;
       width: 33%;
       padding-bottom: 10px;
-      box-sizing: border-box;
       text-align: center;
       cursor: pointer;
       .label {

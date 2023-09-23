@@ -13,18 +13,17 @@ import CommonIcon from '@/components/CommonIcon/index.vue'
 <style scoped lang="scss"> 
 .home-notice-page{
     margin-bottom: var(--margin-bottom-16);
-    width: 100% ;
+    width: bar(--w-100-persent) ;
     display: flex;
-    height: auto;
-    padding: 10px 16px;
+    padding: 20px 16px;
     border-radius: var(--border-radius);
-    border: var(--card-border);
     background: var(--card-bg);
     box-shadow: var(--box-shadow);
-    box-sizing: border-box;
-    transition: all .3s;
+    border: var(--base-border);
+    color: var(--base-text-color-black);
+    transition: var(--transition-normal);
     &:hover {
-      border-color: var(--xy-main);
+      border: var(--hover-border);
       box-shadow: var(--main-shadow);
     }
     .content{

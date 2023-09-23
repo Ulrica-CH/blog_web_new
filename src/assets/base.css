@@ -2,9 +2,12 @@
 :root {
   /* 間距 */
   --margin-bottom-16: 16px;
-  --w-100-percent:100%;
-  --h-100-percent:100%;
+  --w-100-percent: 100%;
+  --h-100-percent: 100%;
   /* 文本颜色 */
+
+  --base-text-color-black: rgb(76, 73, 72);
+  --base-text-color-white: rgba(255, 255, 255, 0.7);
   --r: 22;
   --g: 119;
   --b: 179;
@@ -17,7 +20,7 @@
   --light-text: #ff7242;
   --light-text-bg: rgba(255, 149, 63, 0.1);
   --second: var(--white);
-  --white:#fff;
+  --white: #fff;
   --bg-back: rgba(0, 0, 0, 0.3);
   --bg-white: #f3f6fc;
   --hover-color: #3275b1;
@@ -60,6 +63,7 @@
 
 body {
   font-family:
+    al,
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -76,4 +80,10 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+@font-face {
+  font-family: 'al';
+  src: url('./iconfont/Alimama_DongFangDaKai_Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -1,32 +1,44 @@
-export const subRouter = [
+import type {  RouteRecordRaw } from 'vue-router';
+
+export const subRouter:RouteRecordRaw[] = [
   {
     path: '/home',
-    mate: { title: '首页', icon: 'House' },
+    meta: { title: '首页', icon: 'House' },
     component: () => import('@/views/home/index.vue')
   },
   {
+    path: "/article",
+    name: "Article",
+    meta: {
+      name: "文章",
+      hidden:true
+    },
+    component: () => import("@/views/article/index.vue"),
+    
+  },
+  {
     path: '/category',
-    mate: { title: '分类', icon: 'PieChart' },
+    meta: { title: '分类', icon: 'PieChart' },
     component: () => import('@/views/category/index.vue')
   },
   {
     path: '/tag',
-    mate: { title: '标签', icon: 'PriceTag' },
+    meta: { title: '标签', icon: 'PriceTag' },
     component: () => import('@/views/tag/index.vue')
   },
   {
     path: '/mine',
-    mate: { title: '我的', icon: 'User' },
+    meta: { title: '我的', icon: 'User' },
     component: () => import('@/views/mine/index.vue')
   },
   {
     path: '/log',
-    mate: { title: '建站', icon: 'ScaleToOriginal' },
+    meta: { title: '建站', icon: 'ScaleToOriginal' },
     component: () => import('@/views/log/index.vue')
   },
   {
     path: '/study',
-    mate: { title: '学习', icon: 'Tickets' },
+    meta: { title: '学习', icon: 'Tickets' },
     component: () => import('@/views/study/index.vue')
   }
 ]
