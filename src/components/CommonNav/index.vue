@@ -30,17 +30,17 @@ const [toPath] = useNavRouter()
     @include flex();
     margin: 0 4px;
     padding: 10px;
-    border-radius: $border-radius-10;
+    border-radius: var(--border-radius);
     cursor: pointer;
-    transition: all 0.3s;
+    transition: var(--transition-normal);
     &:hover {
       @include hoverCommStyle();
 
       .router-link {
-        color: $text-color-white;
+        color: var(--text-color-white);
       }
       .router-link-active {
-        color: $text-color-white;
+        color: var(--text-color-white);
       }
     }
     .title {
@@ -53,17 +53,15 @@ const [toPath] = useNavRouter()
   }
   .router-link-active {
     position: relative;
-    color: $active-color;
+    color: var(--active-color);
 
     &::after {
       content: '';
-      position: absolute;
-      bottom: -6px;
-      left: -22px;
+      @include positionA(_, _, -6px, -22px);
       display: inline-block;
       width: 58px;
       height: 2px;
-      background-color: $active-color;
+      background-color: var(--active-color);
     }
   }
 }

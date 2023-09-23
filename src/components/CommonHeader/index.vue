@@ -21,13 +21,13 @@ import CommonNav from '@/components/CommonNav/index.vue'
   right: 0;
   top: 0;
   height: 60px;
-  background-color: $bg-white;
+  background-color: var(--bg-white);
 
   .header {
     @include flex($justify: space-between);
     margin: 0 auto;
     max-width: 1296px;
-    height: 100%;
+    height: var(--h-100-percent);
   }
 }
 </style>

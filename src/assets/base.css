@@ -1,32 +1,49 @@
 /* color palette from <https://github.com/vuejs/theme> */
 :root {
-  --r: 22;
-  --g: 119;
-  --b: 179;
-
-  --global-bg: #f2f6fc;
-  --global-bg-lighter: rgba(242, 246, 252, 0.4);
-  --global-bg-bolder: rgba(242, 246, 252, 0.8);
+  /* 間距 */
+  --margin-bottom-16: 16px;
+  --w-100-percent:100%;
+  --h-100-percent:100%;
+  /* 文本颜色 */
   --r: 22;
   --g: 119;
   --b: 179;
   --main: rgb(var(--r), var(--g), var(--b));
-  --second: var(--white);
-  --cover-bg: rgb(var(--r), var(--g), var(--b));
   --main-lighter: rgba(var(--r), var(--g), var(--b), 0.4);
   --main-bolder: rgba(var(--r), var(--g), var(--b), 0.8);
-  --box-shadow: 3px 6px 6px -3px rgba(45, 45, 45, 0.05);
-  /* --box-shadow: 0 2px 3px 1px rgba(45, 45, 45, .05); */
-  --main-shadow: 3px 6px 6px -3px rgba(var(--r), var(--g), var(--b), 0.2);
-  /* --main-shadow: 0 2px 3px 1px rgba(var(--r), var(--g), var(--b), .2); */
-  --card-border: 1px solid var(--tab-botton-bg);
-  --card-border-dashed: 2px dashed var(--tab-button-hover-bg);
-  --border-radius: 0.5rem;
+  --text-highlight-color: #1f2d3d;
   --light-text: #ff7242;
   --light-text-bg: rgba(255, 149, 63, 0.1);
+  --second: var(--white);
+  --white:#fff;
+  --bg-back: rgba(0, 0, 0, 0.3);
+  --bg-white: #f3f6fc;
+  --hover-color: #3275b1;
+  --active-color: #3275b1;
+  --text-color-white: #fff;
+  --text-color-black: #000;
+  /* 背景颜色 */
+  --global-bg: #f2f6fc;
+  --global-bg-lighter: rgba(242, 246, 252, 0.4);
+  --global-bg-bolder: rgba(242, 246, 252, 0.8);
   --backdrop-filter: saturate(240%) blur(20px);
-
-      --text-highlight-color: #1f2d3d;
+  --tab-botton-bg: #f0f0f0;
+  /* Card样式 */
+  --card-bg: #fff;
+  --card-border: 1px solid var(--tab-botton-bg);
+  --card-border-dashed: 2px dashed var(--tab-button-hover-bg);
+  /* boder */
+  --card-border: 1px solid var(--tab-botton-bg);
+  --card-border-dashed: 2px dashed var(--tab-button-hover-bg);
+  --cover-bg: rgb(var(--r), var(--g), var(--b));
+  --border-radius: 8px;
+  --border-radius-10: 10px;
+  --border-radius-circle: 50%;
+  /* 阴影 */
+  --box-shadow: 3px 6px 6px -3px rgba(45, 45, 45, 0.05);
+  --main-shadow: 3px 6px 6px -3px rgba(var(--r), var(--g), var(--b), 0.2);
+  /* transform */
+  --transition-normal: all 0.3s;
 }
 
 *,

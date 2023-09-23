@@ -11,8 +11,8 @@
   @include flex($align:flex-start,$direction: column);
   margin-bottom:16px;
   padding: 20px 20px;
-  background-color: $card-bg;
-  border-radius: $border-radius;
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
   box-sizing: border-box;
 }
 </style>

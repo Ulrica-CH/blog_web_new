@@ -7,6 +7,6 @@
 .app {
   width: 100vw;
   height: auto;
-  background-color: $bg-white;
+  background-color: var(--bg-white);
 }
 </style>

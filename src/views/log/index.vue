@@ -25,7 +25,7 @@ const [activities] = useLogData()
   align-items: flex-start;
 
   .el-timeline {
-    width: 100%;
+    width: var(--w-100-percent);
     .el-timeline-item {
       padding: 10px 0;
       :deep(.el-timeline-item__wrapper) {

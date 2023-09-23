@@ -27,17 +27,17 @@ defineProps<Partial<IArticleItem>>()
   position: relative;
   width: 49%;
   height: 330px;
-  margin-bottom: 16px;
-  background-color: $card-bg;
-  border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  margin-bottom: var(--margin-bottom-16);
+  background-color: var(--card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   box-sizing: border-box;
   overflow: hidden;
-  transition: all 0.3s;
+  transition: var(--transition-normal);
   cursor: pointer;
 
   &:hover {
-    box-shadow: $main-shadow;
+    box-shadow: var(--main-shadow);
     transform: translateY(-6px);
     .article-cover {
       position: relative;
@@ -45,16 +45,11 @@ defineProps<Partial<IArticleItem>>()
     }
     .desc {
       transform: translateX(0);
-      // display: block;
-
       &::after {
         content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
+        @include positionA(0, 0, _, 0);
         display: inline;
-        width: 100%;
+        width: var(--w-100-percent);
         height: 150px;
         background: linear-gradient(
           180deg,
@@ -66,11 +61,11 @@ defineProps<Partial<IArticleItem>>()
   }
 
   .article-cover {
-    width: 100%;
+    width: var(--w-100-percent);
     height: 188px;
     object-fit: cover;
-    border-radius: $border-radius;
-    transition: all 0.3s;
+    border-radius: var(--border-radius);
+    transition: var(--transition-normal);
     overflow: hidden;
   }
   .item {
@@ -85,45 +80,33 @@ defineProps<Partial<IArticleItem>>()
     @include flex($justify: flex-start);
   }
   .tags {
-    position: absolute;
-    // right: 10px;
-    right: 0;
-    bottom: 0;
+    @include positionA(_, 0, 0, _);
     .tag {
       padding: 6px;
-      //   color: $text-color-white;
-      border-radius: $border-radius;
+      border-radius: var(--border-radius);
       background: var(--global-bg-lighter);
       cursor: pointer;
     }
   }
   .desc {
-    position: absolute;
-    bottom: 66px;
-    left: 0;
+    @include positionA(_, 66px, _, 0);
     padding: 0 20px;
-    width: 100%;
+    width: var(--w-100-percent);
     font-size: 14px;
-    color: #000;
+    color: var(--text-color-black);
     word-wrap: break-word;
-    box-sizing: border-box;
     transform: translateX(-500px);
-    // display: none;
-    transition: all 0.4s;
+    transition: var(--transition-normal);
   }
   .category {
-    position: absolute;
-    left: 10px;
-    top: 10px;
+    @include positionA(10px, _, _, 10px);
     padding: 4px;
     background-color: var(--main);
-    color: #fff;
-    border-radius: $border-radius;
+    color: var(--text-color-white);
+    border-radius: var(--border-radius);
   }
   .date {
-    position: absolute;
-    // bottom: 10px;
-    bottom: 0;
+    @include positionA(_, _, 0, _);
   }
 }
 </style>

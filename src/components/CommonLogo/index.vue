@@ -17,14 +17,14 @@ const { showIcon, mouseenter, mouseout } = useToggleLogo()
 .common-logo {
   width: 100px;
   padding: 10px 0;
-  border-radius: $border-radius-10;
+  border-radius: var(--border-radius);
 
   cursor: pointer;
-  transition: all 0.3s;
+  transition: var(--transition-normal);
 
   &:hover {
-    background-color: $hover-color;
-    color: $text-color-white;
+    background-color: var(--hover-color);
+    color: var(--text-color-white);
   }
   .title {
     @include flex();

@@ -11,7 +11,7 @@ const { countList } = useAvatarInfo()
     <div class="acatar-info">
       <div class="img">
         <img :src="props?.config?.avatar_bg" alt="" />
-        
+
         <div class="circle-wrap">
           <div class="circle"></div>
         </div>
@@ -36,42 +36,35 @@ const { countList } = useAvatarInfo()
 <style scoped lang="scss">
 .acatar-info {
   @include flex($justify: center, $direction: column);
-  width: 100%;
+  width: var(--w-100-percent);
   .img {
     position: relative;
     margin-right: 16px;
     width: 120px;
     height: 120px;
-    // background: var(--global-bg);
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
 
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 50%;
-      transition: all 0.3s;
+      @include imgStyl();
+      border-radius: var(--border-radius-circle);
+      transition: var(--transition-normal);
       &:hover {
         transform: rotate(360deg);
       }
     }
     .circle-wrap {
-      position: absolute;
-      right: 6px;
-      bottom: 6px;
+      @include positionA(_, 6px, 6px, _);
       width: 28px;
       height: 28px;
       background-color: #fff;
-      border-radius: 50%;
+      border-radius: var(--border-radius-circle);
       .circle {
-      position: absolute;
-      right: 2px;
-      bottom: 2px;
-      width: 22px;
-      height: 22px;
-      background-color: #6adf8f;
-      border-radius: 50%;
-    }
+        @include positionA(_, 2px, 2px, _);
+        width: 22px;
+        height: 22px;
+        background-color: #6adf8f;
+        border-radius: var(--border-radius-circle);
+      }
     }
   }
 
@@ -80,50 +73,17 @@ const { countList } = useAvatarInfo()
     font-size: 24px;
   }
   .notice {
-    margin-bottom: 16px;
+    margin-bottom: var(--margin-bottom-16);
     font-size: 22px;
     letter-spacing: 2px;
     border-bottom: 1px;
-    // border-bottom: var(--card-border);
-  }
-  .item {
-    padding: 10px;
-    background: var(--global-bg);
-    width: 100%;
-    margin-bottom: 10px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-  .top {
-    background-color: #fff;
-    height: 120px;
-    @include flex($justify: space-between);
-    .geo,
-    .img {
-      position: relative;
-      margin-right: 16px;
-      width: 50%;
-      height: 100%;
-      background: var(--global-bg);
-      border-radius: $border-radius;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
   }
   .name {
     @include flex();
-    border-radius: $border-radius;
-  }
-  .desc {
-    border-radius: $border-radius;
+    border-radius: var(--border-radius);
   }
   .category {
-    width: 100%;
+    width: var(--w-100-percent);
     padding: 0 20px;
     font-size: 22px;
     @include flex($justify: space-between);
@@ -131,7 +91,6 @@ const { countList } = useAvatarInfo()
       @include flex($direction: column);
       position: relative;
       width: 33%;
-      // margin-right: 16px;
       padding-bottom: 10px;
       box-sizing: border-box;
       text-align: center;
@@ -159,9 +118,6 @@ const { countList } = useAvatarInfo()
         color: var(--main);
       }
     }
-  }
-  .link {
-    border-radius: $border-radius;
   }
 }
 </style>

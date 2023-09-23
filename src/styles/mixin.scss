@@ -15,8 +15,20 @@
   }
 }
 @mixin hoverCommStyle() {
-  background-color: $hover-color;
-  color: $text-color-white;
+  background-color: var(--hover-color);
+  color: var(--text-color-white);
   // cursor: pointer;
-  // transition: all 0.3s;
+  // transition: var(--transition-normal);
+}
+@mixin positionA($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin imgStyl {
+  width: var(--w-100-percent);
+  height: var(--h-100-percent);
+  object-fit: contain;
 }

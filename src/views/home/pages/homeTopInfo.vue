@@ -32,11 +32,11 @@ const { leftBottomItem, toPath } = useTopInfoPage()
 .home-top-info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: var(--margin-bottom-16);
   .item {
     width: 49%;
     height: 300px;
-    box-shadow: $box-shadow;
+    box-shadow: var(--box-shadow);
     box-sizing: border-box;
   }
   .left {
@@ -45,8 +45,8 @@ const { leftBottomItem, toPath } = useTopInfoPage()
     .top {
       height: 70%;
       margin-bottom: 12px;
-      background: $card-bg;
-      border-radius: $border-radius;
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
       cursor: pointer;
     }
     .bottom {
@@ -54,19 +54,19 @@ const { leftBottomItem, toPath } = useTopInfoPage()
       display: flex;
       justify-content: space-between;
 
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: var(--border-radius);
+      border-bottom-right-radius: var(--border-radius);
 
       .bottom-item-1,
       .bottom-item-2,
       .bottom-item-3 {
         padding: 10px;
         width: 30%;
-        background: $card-bg;
-        border-radius: $border-radius;
+        background: var(--card-bg);
+        border-radius: var(--border-radius);
         cursor: pointer;
-        color: $text-color-white;
-        transition: all 0.3s;
+        color: var(--text-color-white);
+        transition: var(--transition-normal);
         .title {
           font-size: 18px;
         }
@@ -74,7 +74,7 @@ const { leftBottomItem, toPath } = useTopInfoPage()
           width: 36%;
 
           .title {
-            transition: all 0.3s;
+            transition: var(--transition-normal);
             transform: translateY(50%) translateX(60%);
           }
         }
@@ -91,17 +91,17 @@ const { leftBottomItem, toPath } = useTopInfoPage()
     }
   }
   .right {
-    background: $card-bg;
-    border: $card-border;
-    // border-radius: $border-radius;
-    transition: all 0.3s;
+    background: var(--card-bg);
+    border: var(--card-border);
+    // border-radius: var(--border-radius);
+    transition: var(--transition-normal);
     cursor: pointer;
     &:hover {
-      //   border-color: $main;
-      box-shadow: $main-shadow;
+      //   border-color: var(--main);
+      box-shadow: var(--main-shadow);
     }
     :deep(.el-carousel) {
-      height: 100%;
+      height: var(--h-100-percent);
       .el-carousel__container {
         height: 100% !important;
         .el-carousel__item h3 {

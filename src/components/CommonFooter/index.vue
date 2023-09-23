@@ -16,6 +16,6 @@
     @include flex();
     height: 240px;
 
-    background-color: $bg-back;
+    background-color: var(--bg-back);
 }
 </style>
