@@ -5,12 +5,10 @@ import type {
   IArticleList,
   IArticle,
   IHomeGetStatistic,
-  IConfig,
-  IInfoCount
+  IConfig
 } from '@/types'
-import { reactive, ref, useAttrs, watch } from 'vue'
+import { reactive, ref, useAttrs, watch,defineEmits } from 'vue'
 import { useRouter } from 'vue-router'
-import type { IAvatarInfo } from '../props'
 
 /** 头部信息 */
 export function useTopInfoPage() {
@@ -114,4 +112,11 @@ export function useAvatarInfo() {
   )
 
   return { countList }
+}
+export function useLoading(emits:any) {
+  const changeLoadingStatus = (flag:boolean) => {
+    emits("onChangeLoading", flag) 
+  }
+
+  return [changeLoadingStatus]
 }

@@ -1,31 +1,33 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import homeNoticePage from './pages/homeNoticePage.vue'
 import homeMainPage from './pages/homeMainPage.vue'
+import { useArticle, useRightCount, useRightConfig, useLoading } from './hooks'
 
-import {
-  useArticle,
-  useRightCount,
-  useRightConfig
-} from './hooks'
-
+defineProps<{ loading: Boolean }>()
+const emits = defineEmits<{ onChangeLoading: [loading: boolean] }>()
+defineOptions({ name: 'Home' })
 /** 文章 */
 const { articleList, articleTotal, _homeGetArticleList } = useArticle()
 /** 右侧统计 */
 const { infoCount, _homeGetStatistic } = useRightCount()
 /** 网站配置 */
 const { config, _homeGetConfig } = useRightConfig()
-
+/** Loading */
+const [changeLoadingStatus] = useLoading(emits)
 onMounted(async () => {
-  await _homeGetStatistic()
-  await _homeGetArticleList('init')
-  await _homeGetConfig()
+  changeLoadingStatus(true)
+  setTimeout(async () => {
+    await _homeGetStatistic()
+    await _homeGetArticleList('init')
+    await _homeGetConfig()
+    changeLoadingStatus(false)
+  }, 2000)
 })
 </script>
 
 <template>
   <div class="home">
-
     <!-- home 顶部信息 -->
     <homeNoticePage />
     <!-- 文章 侧边栏 -->
@@ -36,5 +38,3 @@ onMounted(async () => {
     />
   </div>
 </template>
-
-<style scoped lang="scss"></style>

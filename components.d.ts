@@ -12,6 +12,7 @@ declare module 'vue' {
     CommonFooter: typeof import('./src/components/CommonFooter/index.vue')['default']
     CommonHeader: typeof import('./src/components/CommonHeader/index.vue')['default']
     CommonIcon: typeof import('./src/components/CommonIcon/index.vue')['default']
+    CommonLoading: typeof import('./src/components/CommonLoading/index.vue')['default']
     CommonLogo: typeof import('./src/components/CommonLogo/index.vue')['default']
     CommonNav: typeof import('./src/components/CommonNav/index.vue')['default']
     ElAffix: typeof import('element-plus/es')['ElAffix']
@@ -29,5 +30,8 @@ declare module 'vue' {
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+  }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
   }
 }
