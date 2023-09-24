@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import homeNoticePage from './pages/homeNoticePage.vue'
 import homeMainPage from './pages/homeMainPage.vue'
 import { useArticle, useRightCount, useRightConfig, useLoading } from './hooks'

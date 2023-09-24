@@ -2,12 +2,6 @@
   <div class="layout">
     <CommonHeader />
     <div class="main">
-      <!-- <CommonLoading v-if="loading" v-loading="loading"/>
-      <router-view
-      v-if="loading"
-        :loading="loading"
-        @onChangeLoading="onChangeLoading"
-      ></router-view>-->
       <router-view
         v-loading="loading"
         :loading="loading"
@@ -25,15 +19,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import CommonHeader from '@/components/CommonHeader/index.vue'
 import CommonFooter from '@/components/CommonFooter/index.vue'
-import CommonLoading from '@/components/CommonLoading/index.vue'
-const loading = ref(false)
-const onChangeLoading = (flag: boolean) => {
-  console.log(flag)
-  loading.value = flag
-}
+import { useLoading } from './hooks'
+const [loading, onChangeLoading] = useLoading()
 </script>
 
 <style scoped lang="scss">
