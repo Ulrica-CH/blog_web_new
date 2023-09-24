@@ -7,7 +7,7 @@ defineProps<IMainRightPageProps>()
 
 <template>
   <div class="main-right-page">
-    <homeTopInfoPage />
+    <homeTopInfoPage :isTopArticleList="isTopArticleList"/>
     <div class="article-wrap">
       <CommonArticleItem
         v-for="(item, index) in articleList"

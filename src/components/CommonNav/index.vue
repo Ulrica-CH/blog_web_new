@@ -38,10 +38,10 @@ const [routerArr] = useComputed(subRouter)
       @include hoverCommStyle();
 
       .router-link {
-        color: var(--text-color-white);
+        color: var(--base-text-color-white);
       }
       .router-link-active {
-        color: var(--text-color-white);
+        color: var(--base-text-color-white);
       }
     }
     .title {

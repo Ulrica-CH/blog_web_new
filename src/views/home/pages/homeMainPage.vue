@@ -10,7 +10,7 @@ const props = defineProps<IMainPageProps>()
   <div class="home-main-page"> 
     <homeMainLeftPage v-bind="$attrs" :config="config"/>
     <!-- <homeMainLeftPage :config="config"/> -->
-    <homeMainRightPageVue :articleList="articleList"/>
+    <homeMainRightPageVue :articleList="articleList" :isTopArticleList="isTopArticleList"/>
     
     </div>
 </template>

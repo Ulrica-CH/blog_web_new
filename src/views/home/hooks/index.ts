@@ -9,15 +9,16 @@ import type {
 } from '@/types'
 import { reactive, ref, useAttrs, watch,defineEmits } from 'vue'
 import { useRouter } from 'vue-router'
-
+// const router = useRouter()
 /** 头部信息 */
 export function useTopInfoPage() {
+  const router = useRouter()
   const leftBottomItem = [
     { title: '分类', path: '/category' },
     { title: '标签', path: '/tag' },
     { title: '日志', path: '/log' }
   ]
-  const router = useRouter()
+ 
   const toPath = (path: string) => {
     router.push(path)
   }
@@ -33,6 +34,8 @@ export function useArticle() {
     loading: true // 加载
   })
   const articleList = ref<IArticle[]>([])
+  /** 置顶文章 */
+  const isTopArticleList = ref<IArticle[]>([])
   const articleTotal = ref()
 
   /** 文章 */
@@ -44,11 +47,32 @@ export function useArticle() {
     })
     articleList.value = res?.list
     articleTotal.value = res?.total
+
+    isTopArticleList.value =  res?.list.filter(item => item.is_top === 1)
+  }
+  
+  return { articleList, isTopArticleList,articleTotal, _homeGetArticleList }
+}
+export function usePathToArtDetail() {
+  const router = useRouter()
+  /* 文章操作 start */
+  const operate = (type: string, article: IArticle, index?: number) => {
+    switch (type) {
+      case 'detail':
+        console.log(router,article)
+        router.push({ path: '/article', query: { id: article.id } })
+        break
+      case 'tag':
+        router.push({ path: '/tag' })
+        break
+      case 'category':
+        router.push({ path: '/category' })
+        break
+    }
   }
 
-  return { articleList, articleTotal, _homeGetArticleList }
+  return [operate]
 }
-
 /** 左侧统计 */
 export function useRightCount() {
   const infoCount = ref<IHomeGetStatistic>({})

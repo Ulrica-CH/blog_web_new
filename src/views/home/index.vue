@@ -8,7 +8,7 @@ defineProps<{ loading: Boolean }>()
 const emits = defineEmits<{ onChangeLoading: [loading: boolean] }>()
 defineOptions({ name: 'Home' })
 /** 文章 */
-const { articleList, articleTotal, _homeGetArticleList } = useArticle()
+const { articleList, isTopArticleList,articleTotal, _homeGetArticleList } = useArticle()
 /** 右侧统计 */
 const { infoCount, _homeGetStatistic } = useRightCount()
 /** 网站配置 */
@@ -34,6 +34,7 @@ onMounted(async () => {
     <homeMainPage
       :infoCount="infoCount"
       :articleList="articleList"
+      :isTopArticleList="isTopArticleList"
       :config="config"
     />
   </div>

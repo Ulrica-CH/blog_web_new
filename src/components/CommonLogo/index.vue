@@ -24,7 +24,7 @@ const { showIcon, mouseenter, mouseout } = useToggleLogo()
 
   &:hover {
     background-color: var(--xy-main);
-    color: var(--text-color-white);
+    color: var(--base-text-color-white);
   }
   .title {
     @include flex();
