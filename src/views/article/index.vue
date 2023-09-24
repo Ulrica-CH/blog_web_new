@@ -1,8 +1,8 @@
-<script setup>
+<script setup lang="ts">
 import { ref, watch, reactive, h } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
-// import { staticData, user } from "@/store/index.js";
+import { useLoading } from '@/hooks/index'
 import { storeToRefs } from 'pinia'
 
 import MdEditor from 'md-editor-v3'
@@ -14,7 +14,9 @@ import {
   //   articleLike,
   //   cancelArticleLike,
 } from '@/api/article'
-
+defineProps<{ loading: Boolean }>()
+const emits = defineEmits<{ onChangeLoading: [loading: boolean] }>()
+const [changeLoadingStatus] = useLoading(emits)
 const MdCatalog = MdEditor.MdCatalog
 let setUpTimes = null
 let lastArticleId = null
@@ -77,8 +79,12 @@ const addReadingDuration = async (id) => {
 }
 
 const init = async (id) => {
-  await getArticleDetails(id)
-  await addReadingDuration(lastArticleId)
+  changeLoadingStatus(true)
+  setTimeout(async () => {
+    await getArticleDetails(id)
+    // await addReadingDuration(lastArticleId)
+    changeLoadingStatus(false)
+  }, 2000)
 }
 watch(
   () => route,
@@ -100,7 +106,7 @@ const getImg = () => {
 </script>
 
 <template>
-  <PageHeader :article="articleInfo" />
+  <!-- <PageHeader :article="articleInfo" /> -->
   <div class="article">
     <el-row class="article_box">
       <el-col :xs="24" :sm="18" class="left">
@@ -186,11 +192,10 @@ const getImg = () => {
     .title {
       margin: 80px 0 40px 0;
       font-size: 28px;
-     color: var(--base-text-color-white);
+      color: var(--base-text-color-white);
     }
     .category {
       @include positionA(20px, none, none, 20px);
-      
     }
     .tags-wrap {
       @include positionA(20px, none, none, 140px);

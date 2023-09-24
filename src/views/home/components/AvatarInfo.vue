@@ -7,7 +7,7 @@ const { countList } = useAvatarInfo()
 </script>
 
 <template>
-  <CommonCard>
+  <CommonCard noPadding>
     <div class="acatar-info">
       <div class="img">
         <img :src="props?.config?.avatar_bg" alt="" />
@@ -16,7 +16,6 @@ const { countList } = useAvatarInfo()
           <div class="circle"></div>
         </div>
       </div>
-
       <div class="name">MichstaBe</div>
       <div class="notice">{{ props?.config?.blog_notice }}</div>
       <div class="category">
@@ -41,21 +40,28 @@ const { countList } = useAvatarInfo()
 
   .img {
     position: relative;
-    margin-right: 16px;
-    width: 120px;
-    height: 120px;
-    border-radius: var(--border-radius);
+    // margin-right: 16px;
+    @include flex();
+    width: var(--w-100-percent);
+    height: 160px;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    background-image: url('../../../assets/imgs/avatar_bg.webp');
+    background-size: cover;
 
     img {
       @include imgStyl();
+      width: 120px;
+      height: 120px;
       border-radius: var(--border-radius-circle);
       transition: var(--transition-normal);
+      object-fit: contain;
       &:hover {
         transform: rotate(360deg);
       }
     }
     .circle-wrap {
-      @include positionA(_, 6px, 6px, _);
+      @include positionA(_, 94px, 24px, _);
       width: 28px;
       height: 28px;
       background-color: #fff;

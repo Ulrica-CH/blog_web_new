@@ -9,12 +9,6 @@
       ></router-view>
     </div>
     <CommonFooter />
-
-    <router-view
-      v-if="loading"
-      :loading="loading"
-      @onChangeLoading="onChangeLoading"
-    ></router-view>
   </div>
 </template>
 
@@ -33,7 +27,9 @@ const [loading, onChangeLoading] = useLoading()
     padding: 20px;
     box-sizing: border-box;
     background-color: #f4f6fc;
-  }
+  
+}
+  
   .main,
   .pc {
     max-width: 1200px;

@@ -13,6 +13,7 @@
   height: 100vh;
 }
 :deep(.el-loading-mask) {
+  height: calc(100vh - 534px);
   background-color: #f4f6fc !important;
 }
 </style>

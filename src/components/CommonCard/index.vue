@@ -1,7 +1,9 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+defineProps<{ noPadding?: boolean }>()
+</script>
 
 <template>
-  <div class="common-card">
+  <div class="common-card" :style="{ padding: noPadding ? '0' : '20px' }">
     <slot />
   </div>
 </template>
