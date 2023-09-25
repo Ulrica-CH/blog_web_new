@@ -8,13 +8,15 @@ defineProps<{ loading: Boolean }>()
 const emits = defineEmits<{ onChangeLoading: [loading: boolean] }>()
 defineOptions({ name: 'Home' })
 /** 文章 */
-const { articleList, isTopArticleList,articleTotal, _homeGetArticleList } = useArticle()
+const { articleList, isTopArticleList, articleTotal, _homeGetArticleList } =
+  useArticle()
 /** 右侧统计 */
 const { infoCount, _homeGetStatistic } = useRightCount()
 /** 网站配置 */
-const { config, _homeGetConfig } = useRightConfig()
+const { config, runtime, _homeGetConfig } = useRightConfig()
 /** Loading */
 const [changeLoadingStatus] = useLoading(emits)
+
 onMounted(async () => {
   changeLoadingStatus(true)
   setTimeout(async () => {
@@ -36,6 +38,7 @@ onMounted(async () => {
       :articleList="articleList"
       :isTopArticleList="isTopArticleList"
       :config="config"
+      :runtime="runtime"
     />
   </div>
 </template>

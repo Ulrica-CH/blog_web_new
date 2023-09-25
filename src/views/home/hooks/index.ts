@@ -101,12 +101,23 @@ export function useRightConfig() {
     bilibili_link: '',
     view_time: 0
   })
+  const runtime = ref(0)
+  const calcRuntimeDays = (time:string) => {
+    if (time) {
+      time = time.replace(/\-/g, "/"); // 解决ios系统上格式化时间出现NAN的bug
+      const now = new Date().getTime();
+      const created = new Date(time).getTime();
+      const days = Math.floor((now - created) / 8.64e7);
+      runtime.value = days;
+      console.log(days)
+    }
+  };
   const _homeGetConfig = async () => {
     const res = await homeGetConfig()
-    console.log(res)
     config.value = res
+    calcRuntimeDays(config.value.createdAt)
   }
-  return { config, _homeGetConfig }
+  return { config,runtime, _homeGetConfig }
 }
 /**  */
 export function useAvatarInfo() {

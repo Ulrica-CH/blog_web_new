@@ -6,7 +6,7 @@ import CommonCard from '@/components/CommonCard/index.vue'
   <CommonCard> 
     
     <div class="notice">
-      这是图标 这是一天条告
+     这是图标 有问题您可以添加wx或者qq联系我
     </div>
     </CommonCard>
 </template>

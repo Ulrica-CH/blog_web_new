@@ -18,7 +18,7 @@ import WebsiteStatistics from '../components/WebsiteStatistics.vue'
 
     <AnnualStatistics/>
 
-    <WebsiteStatistics/>
+    <WebsiteStatistics v-bind="$attrs"/>
   </div>
 </template>
 

@@ -107,10 +107,10 @@ const getImg = () => {
 
 <template>
   <!-- <PageHeader :article="articleInfo" /> -->
-  <div class="article">
+  <div class="article" :style="{height: loading ? '860px' : 'auto'}">
     <el-row class="article_box">
       <el-col :xs="24" :sm="18" class="left">
-        <div class="header-info" :style="{ backgroundImage: getImg() }">
+        <div v-if="!loading" class="header-info" :style="{ backgroundImage: getImg() }">
           <div class="title">{{ articleInfo?.article_title }}</div>
           <div class="category comm-item">{{ articleInfo?.categoryName }}</div>
 
@@ -152,7 +152,7 @@ const getImg = () => {
       </el-col>
       <el-col :xs="0" :sm="6">
         <el-affix :offset="53" style="width: inherit">
-          <el-card class="catalogue-card card-hover" header="目录">
+          <el-card v-if="!loading" class="catalogue-card card-hover" header="目录">
             <div class="catalogue-card__box">
               <MdCatalog
                 :editorId="mdState.id"

@@ -48,3 +48,8 @@ export interface IConfig {
   bilibili_link: string
   view_time: number
 }
+
+export interface ITags {
+  id?: number
+  tag_name?: string
+}
