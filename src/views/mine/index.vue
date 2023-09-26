@@ -1,23 +1,74 @@
 <script setup lang="ts">
-
+import skillPage from './components/skill.vue'
 </script>
 
 <template>
-    <div class="mine">
-        问题记录先放到这吧<br>
-        1、props 结构赋值响应式问题<br>
-        2、useAttrs 类型问题<br>
-        3、defineProps放到自定义hooks问题（2023.9.24解决）<br>
-        4、左侧统计数据不显示问题（2023.9.24解决，watch问题）<br>
-        5、目前来看去写js的时候用的是React的useState思想，页面的逻辑也抽离为hooks，但是有一个数组返回类型的问题<br>
-        6、关于css，目前来看有点混乱，应该都是定义好变量在引入，目前是有scss的变量，css的变量，后续都要改为css原生变量（这个周末要重构一下）（2023.9.23解决，全局css变量）<br>
-        7、关于defineProps,defineEmits等这些宏定义不能拆到自定义hooks里，要在.vue里定义，并通过传值给hooks
-        8、router-view是可以接受传值及时间回调的（以前没试过）<br>
+  <div class="mine">
+    <div class="author-card">
+      <div class="author-card-desc">简介</div>
+      <div class="author-card-subtitle">您好，很高兴认识你👋</div>
+      <div class="author-card-title">我是 MichstaBe</div>
+      <div class="author-card-subtitle2">
+        是一名 前端开发工程师
+      </div>
     </div>
+
+    <div class="about-card">
+      关于这个网站：目前不打算去做点赞评论，友链等。主要是记录自己的学习，笔记等，搞太多到是失了本心。<br/>
+      利用业余时间开发，只能慢慢完善了。
+    </div>
+
+    <skillPage/>
+  </div>
 </template>
 
 <style scoped lang="scss">
-.mine{
+.mine {
+  margin: 16px auto;
+  // max-width: 81rem;
+  // height: calc(100vh - 220px);
+  .author-card {
+    width: 100%;
+    background: linear-gradient(
+      120deg,
+      rgba(91, 39, 255, 1) 0%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    color: #fff;
+    margin-bottom: 16px;
+    padding: 0px 16px;
+    border-radius: 16px;
+
+    .author-card-desc {
+        padding: 1rem 0;
+      font-size: 80%;
+      opacity: 0.8;
+      color: #fff;
+    }
+    .author-card-title {
+        padding: 1rem 0;
+      font-size: 2rem;
+      font-weight: bold;
+      
+    }
+    .author-card-subtitle2{
+        padding:0 0 1rem;
+    }
+  }
+  .about-card {
     
+    width: 100%;
+    background: linear-gradient(
+      280deg,
+      rgba(91, 39, 255, 1) 50%,
+      rgba(0, 212, 255, 1) 100%
+    );
+    color: #fff;
+    margin-bottom: 16px;
+    padding: 20px 16px;
+    border-radius: 16px;
+
+    
+  }
 }
 </style>

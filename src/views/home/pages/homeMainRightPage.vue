@@ -12,6 +12,7 @@ defineProps<IMainRightPageProps>()
       <CommonArticleItem
         v-for="(item, index) in articleList"
         :article="item"
+        :index="index"
         :key="index"
       />
     </div>

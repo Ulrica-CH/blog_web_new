@@ -7,7 +7,8 @@
   /* 文本颜色 */
 
   --base-text-color-black: rgb(76, 73, 72);
-  --base-text-color-white: rgba(255, 255, 255, 0.7);
+  /* --base-text-color-white: rgba(255, 255, 255, 0.7); */
+  --base-text-color-white: #fff;
   --r: 22;
   --g: 119;
   --b: 179;

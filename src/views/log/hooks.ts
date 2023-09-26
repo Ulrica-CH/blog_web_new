@@ -1,8 +1,16 @@
 export function useLogData() {
   const activities = [
     {
+      content: '分类页样式，mine页面，学习页面初步填充',
+      timestamp: '2023-09-26'
+    },
+    {
+      content: 'article详情Loading完善，CommonFooter完善，左侧信息组件完善（工作日只能写一点）',
+      timestamp: '2023-09-25'
+    },
+    {
       content: '文章详情页基本开发，接口对接；Main区域增加加载loading',
-      timestamp: '2023-09-22'
+      timestamp: '2023-09-24'
     },
     {
       content: 'axios封装，接口调通，文章卡片样式，个人栏信息；不足：css书写混乱，js 逻辑还可以',
