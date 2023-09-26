@@ -9,6 +9,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     CommonArticleItem: typeof import('./src/components/CommonArticleItem/index.vue')['default']
     CommonCard: typeof import('./src/components/CommonCard/index.vue')['default']
+    CommonCategoryItem: typeof import('./src/components/CommonCategoryItem/index.vue')['default']
     CommonFooter: typeof import('./src/components/CommonFooter/index.vue')['default']
     CommonHeader: typeof import('./src/components/CommonHeader/index.vue')['default']
     CommonIcon: typeof import('./src/components/CommonIcon/index.vue')['default']
@@ -20,14 +21,8 @@ declare module 'vue' {
     ElCarousel: typeof import('element-plus/es')['ElCarousel']
     ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
     ElCol: typeof import('element-plus/es')['ElCol']
-    ElDrawer: typeof import('element-plus/es')['ElDrawer']
     ElIcon: typeof import('element-plus/es')['ElIcon']
-    ElImage: typeof import('element-plus/es')['ElImage']
     ElRow: typeof import('element-plus/es')['ElRow']
-    ElSkeleton: typeof import('element-plus/es')['ElSkeleton']
-    ElTag: typeof import('element-plus/es')['ElTag']
-    ElTimeline: typeof import('element-plus/es')['ElTimeline']
-    ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
