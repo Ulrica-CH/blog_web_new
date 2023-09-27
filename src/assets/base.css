@@ -1,4 +1,5 @@
 /* color palette from <https://github.com/vuejs/theme> */
+@import './iconfont/iconfont.css';
 :root {
   /* 間距 */
   --margin-bottom-16: 16px;

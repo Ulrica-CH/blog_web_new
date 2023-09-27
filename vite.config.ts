@@ -1,5 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
-
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -12,13 +12,16 @@ import {
   ElementPlusResolve
 } from 'vite-plugin-style-import'
 // https://vitejs.dev/config/
+
+/** 路径查找 */
+const pathResolve = (dir: string): string => {
+  return resolve(__dirname, ".", dir);
+};
 export default defineConfig({
   plugins: [
-    vue(
-      {
-        propsDestructure:true
-      }
-    ),
+    vue({
+      propsDestructure: true
+    }),
     // ...
     AutoImport({
       resolvers: [ElementPlusResolver()]
@@ -98,16 +101,27 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },
-      '/gitee': {
-        target: 'https://gitee.com/mrzym',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/gitee/, '')
-      },
       '/wapi': {
         //要访问的跨域的域名
         target: 'http://mrzym.top:3000',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/wapi/, '')
+      }
+    }
+  },
+  build: {
+    sourcemap: false,
+    // 消除打包大小超过500kb警告
+    chunkSizeWarningLimit: 4000,
+    rollupOptions: {
+      input: {
+        index: pathResolve('index.html')
+      },
+      // 静态资源分类打包
+      output: {
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]'
       }
     }
   }

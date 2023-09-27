@@ -1,6 +1,7 @@
 import { useRouter } from 'vue-router'
 import type { IArticle } from '@/types'
-
+import { computed } from 'vue'
+import dayjs from 'dayjs'
 export function useArticleItem() {
   const router = useRouter()
   /* 文章操作 start */
@@ -19,4 +20,20 @@ export function useArticleItem() {
   }
 
   return [operate]
+}
+export function useComputed(time: string) {
+  // let differenceInDays = 0
+  const computedTime = computed(() => {
+    const now = dayjs()
+    const date = now.format('YYYY-MM-DD')
+
+    const splitTime = time.split(' ')[0]
+    const targetDate = dayjs(splitTime)
+
+    const currentDate = dayjs(date)
+    const differenceInDays = targetDate.diff(currentDate, 'day')
+    return Math.abs(differenceInDays)
+  })
+
+  return { computedTime }
 }

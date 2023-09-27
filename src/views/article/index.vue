@@ -4,7 +4,7 @@ import { useRoute, useRouter } from 'vue-router'
 import { ElNotification } from 'element-plus'
 import { useLoading } from '@/hooks/index'
 import { storeToRefs } from 'pinia'
-
+import { IArticle } from '@/types'
 import MdEditor from 'md-editor-v3'
 import 'md-editor-v3/lib/style.css'
 import {
@@ -37,37 +37,15 @@ const articleInfo = ref({})
 const scrollElement = document.documentElement
 // 移动端目录是否可见
 const drawerShow = ref(false)
-// 推荐文章
-const recommendList = ref([])
-const previousArticle = ref({})
-const nextArticle = ref({})
-
-const toggleDrawer = () => {
-  drawerShow.value = !drawerShow.value
-}
-
-const goToArticle = (article) => {
-  router.push({ path: '/article', query: { id: article.id } })
-}
 
 // 文章详情
-const getArticleDetails = async (id) => {
+const getArticleDetails = async (id:number) => {
   let res = await getArticleById({ id })
   mdState.text = res.article_content
   articleInfo.value = res
   if (res.code == 0) {
     mdState.text = res.article_content
     articleInfo.value = res
-    // if (getUserInfo.value.id) {
-    //   const res = await getIsLikeByIdAndType({
-    //     for_id: articleInfo.value.id,
-    //     type: 1,
-    //     user_id: getUserInfo.value.id,
-    //   });
-    //   if (res.code == 0) {
-    //     isLike.value = res.result;
-    //   }
-    // }
   }
 }
 
@@ -80,11 +58,9 @@ const addReadingDuration = async (id) => {
 
 const init = async (id) => {
   changeLoadingStatus(true)
-  setTimeout(async () => {
-    await getArticleDetails(id)
-    // await addReadingDuration(lastArticleId)
-    changeLoadingStatus(false)
-  }, 2000)
+  await getArticleDetails(id)
+  // await addReadingDuration(lastArticleId)
+  changeLoadingStatus(false)
 }
 watch(
   () => route,
@@ -107,10 +83,14 @@ const getImg = () => {
 
 <template>
   <!-- <PageHeader :article="articleInfo" /> -->
-  <div class="article" :style="{height: loading ? '860px' : 'auto'}">
+  <div class="article" :style="{ height: loading ? '860px' : 'auto' }">
     <el-row class="article_box">
       <el-col :xs="24" :sm="18" class="left">
-        <div v-if="!loading" class="header-info" :style="{ backgroundImage: getImg() }">
+        <div
+          v-if="!loading"
+          class="header-info"
+          :style="{ backgroundImage: getImg() }"
+        >
           <div class="title">{{ articleInfo?.article_title }}</div>
           <div class="category comm-item">{{ articleInfo?.categoryName }}</div>
 
@@ -152,7 +132,11 @@ const getImg = () => {
       </el-col>
       <el-col :xs="0" :sm="6">
         <el-affix :offset="53" style="width: inherit">
-          <el-card v-if="!loading" class="catalogue-card card-hover" header="目录">
+          <el-card
+            v-if="!loading"
+            class="catalogue-card card-hover"
+            header="目录"
+          >
             <div class="catalogue-card__box">
               <MdCatalog
                 :editorId="mdState.id"

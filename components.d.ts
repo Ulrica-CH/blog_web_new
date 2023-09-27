@@ -16,6 +16,7 @@ declare module 'vue' {
     CommonLoading: typeof import('./src/components/CommonLoading/index.vue')['default']
     CommonLogo: typeof import('./src/components/CommonLogo/index.vue')['default']
     CommonNav: typeof import('./src/components/CommonNav/index.vue')['default']
+    CommonSvg: typeof import('./src/components/CommonSvg/index.vue')['default']
     ElAffix: typeof import('element-plus/es')['ElAffix']
     ElCard: typeof import('element-plus/es')['ElCard']
     ElCarousel: typeof import('element-plus/es')['ElCarousel']

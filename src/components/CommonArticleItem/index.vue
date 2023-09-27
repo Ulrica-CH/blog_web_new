@@ -1,37 +1,45 @@
 <script setup lang="ts">
 import type { IArticleItem } from './props'
-import { useRouter } from 'vue-router'
-import { useArticleItem } from './hooks.ts'
-const props = defineProps<Partial<IArticleItem>>()
+import { useArticleItem, useComputed } from './hooks.ts'
+import CommonSvg from '@/components/CommonSvg/index.vue'
+const props = defineProps<IArticleItem>()
 const [operate] = useArticleItem()
-/* 文章操作 end */
+
+const { computedTime } = useComputed(props.article?.createdAt)
 </script>
 
 <template>
   <div class="comm-artice-item">
-    <img
-      class="article-cover"
-      :style="{ left: props.index % 2 === 0 && 0 }"
-      :src="article?.article_cover"
-      alt=""
-    />
+    <div class="article-cover" :style="{ left: props.index % 2 === 0 && 0 }">
+      <img :src="article?.article_cover" alt="" />
+    </div>
     <div class="content" :style="{ right: props.index % 2 === 0 && 0 }">
       <div class="title item" @click="operate('detail', article)">
+        <!-- <CommonSvg icon="xinxi" /> -->
         {{ article?.article_title }}
       </div>
 
-      <div class="tags item">
-        <span
-          v-for="(item, index) in article?.tagNameList"
-          :key="index"
-          class="tag"
-        >
-          #{{ item }}
-        </span>
+      <div class="tags-cate-wrap">
+        <div class="tags item">
+          <span
+            v-for="(item, index) in props.article?.tagNameList"
+            :key="index"
+            class="tag"
+          >
+            <CommonSvg icon="tag" />
+            {{ item }}
+          </span>
+        </div>
+
+        <div class="date">
+          <CommonSvg icon="time" />
+          {{ computedTime }}天前
+        </div>
       </div>
 
-      <div class="desc">文章描述： {{ article?.article_description }}</div>
-      <div class="date item">{{ article?.createdAt.split(' ')[0] }}</div>
+      <div class="desc">
+        {{ props.article?.article_description }}
+      </div>
     </div>
 
     <div
@@ -41,7 +49,8 @@ const [operate] = useArticleItem()
         left: props.index % 2 === 0 && '10px'
       }"
     >
-      {{ article?.categoryName }}
+     <CommonSvg icon="category" />
+      {{ props.article?.categoryName }}
     </div>
   </div>
 </template>
@@ -65,22 +74,34 @@ const [operate] = useArticleItem()
     box-shadow: var(--main-shadow);
     transform: translateX(6px);
     border: var(--hover-border);
+
+    .article-cover {
+      img {
+        transform: scale(1.2);
+      }
+    }
   }
 
   .article-cover {
     position: absolute;
     right: 0;
-    width: 50%;
+    width: 45%;
     height: 100%;
-    object-fit: cover;
-    border-radius: var(--border-radius);
+
     transition: var(--transition-normal);
     overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--border-radius);
+      transition: var(--transition-normal);
+    }
   }
   .content {
     position: absolute;
     @include flex($direction: column);
-    width: 50%;
+    width: 55%;
     height: 100%;
   }
   .item {
@@ -88,20 +109,43 @@ const [operate] = useArticleItem()
     padding: 0 20px;
   }
   .title {
+    @include flex();
     font-size: 22px;
     font-weight: 600;
   }
   .info {
     @include flex($justify: flex-start);
   }
-  .tags {
-    @include positionA(_, 0, 0, _);
-    .tag {
-      padding: 6px;
-      border-radius: var(--border-radius);
-      background: var(--global-bg-lighter);
-      cursor: pointer;
+  .tags-cate-wrap {
+    @include flex();
+
+    .tags {
+      // @include positionA(_, 0, 0, _);
+      @include flex();
+      .tag {
+        @include flex();
+        margin: 0 4px;
+        padding: 6px;
+        border-radius: var(--border-radius);
+        background: var(--global-bg-lighter);
+        cursor: pointer;
+      }
     }
+
+    .date {
+      @include flex();
+    }
+  }
+  .category {
+    position: absolute;
+    // left: 10px;
+    top: 10px;
+    padding: 4px;
+    @include flex();
+    // background-color: var(--base-text-color-black);
+    background-color: rgba(0,0,0.2);
+    color: var(--base-text-color-white);
+    border-radius: var(--border-radius);
   }
   .desc {
     // @include positionA(_, 66px, _, 0);
@@ -112,18 +156,6 @@ const [operate] = useArticleItem()
     word-wrap: break-word;
     // transform: translateX(-500px);
     transition: var(--transition-normal);
-  }
-  .category {
-    position: absolute;
-    // left: 10px;
-    top: 10px;
-    padding: 4px;
-    background-color: var(--base-text-color-black);
-    color: var(--base-text-color-white);
-    border-radius: var(--border-radius);
-  }
-  .date {
-    // @include positionA(_, _, 0, _);
   }
 }
 </style>

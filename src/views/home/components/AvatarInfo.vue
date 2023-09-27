@@ -17,7 +17,7 @@ const { countList } = useAvatarInfo()
         </div>
       </div>
       <div class="name">MichstaBe</div>
-      <div class="notice">{{ props?.config?.blog_notice }}</div>
+      <!-- <div class="notice">{{ props?.config?.blog_notice }}</div> -->
       <div class="category">
         <div
           v-for="(item, index) in countList"

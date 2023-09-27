@@ -4,6 +4,8 @@ import router from './router'
 import 'normalize.css'
 import pinia from './store'
 import '@/assets/main.css'
+import '@/assets/iconfont/iconfont.js'
+import '@/assets/iconfont/iconfont.css'
 import '@/styles/index.less'
 
 import registerIcons from '@/global/register-icons'

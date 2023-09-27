@@ -2,13 +2,15 @@
   <div class="layout">
     <CommonHeader />
     <div class="main">
-      <router-view
-        v-loading="loading"
-        :loading="loading"
-        @onChangeLoading="onChangeLoading"
-      ></router-view>
+      <Transition name="fade-transform" mode="out-in">
+        <router-view
+          v-loading="loading"
+          :loading="loading"
+          @onChangeLoading="onChangeLoading"
+        ></router-view>
+      </Transition>
     </div>
-    <CommonFooter />
+    <CommonFooter v-if="!loading"/>
   </div>
 </template>
 
@@ -27,9 +29,8 @@ const [loading, onChangeLoading] = useLoading()
     padding: 20px;
     box-sizing: border-box;
     background-color: #f4f6fc;
-  
-}
-  
+  }
+
   .main,
   .pc {
     max-width: 1200px;

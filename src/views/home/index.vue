@@ -19,12 +19,10 @@ const [changeLoadingStatus] = useLoading(emits)
 
 onMounted(async () => {
   changeLoadingStatus(true)
-  setTimeout(async () => {
-    await _homeGetStatistic()
-    await _homeGetArticleList('init')
-    await _homeGetConfig()
-    changeLoadingStatus(false)
-  }, 2000)
+  await _homeGetStatistic()
+  await _homeGetArticleList('init')
+  await _homeGetConfig()
+  changeLoadingStatus(false)
 })
 </script>
 
