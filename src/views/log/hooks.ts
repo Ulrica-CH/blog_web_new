@@ -1,6 +1,10 @@
 export function useLogData() {
   const activities = [
     {
+      content: '调整全局Loading，自定义指令图片加载Loading（后续文章记录）',
+      timestamp: '2023-09-28'
+    },
+    {
       content: '分类页样式，mine页面，学习页面初步填充',
       timestamp: '2023-09-26'
     },
