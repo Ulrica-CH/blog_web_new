@@ -24,11 +24,11 @@ defineProps<IMainRightPageProps>()
   flex: 1;
   @include flex(space-between, _, column);
   flex-wrap: wrap;
-  width: var(--w-100-persent);
+  // width: var(--w-100-persent);
   .article-wrap {
     @include flex(space-between);
     flex-wrap: wrap;
-    width: var(--w-100-persent);
+    // width: var(--w-100-persent);
   }
 }
 </style>

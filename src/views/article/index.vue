@@ -14,6 +14,8 @@ import {
   //   articleLike,
   //   cancelArticleLike,
 } from '@/api/article'
+import useLoadingStore from '@/store/loading'
+const loadingState = useLoadingStore()
 defineProps<{ loading: Boolean }>()
 const emits = defineEmits<{ onChangeLoading: [loading: boolean] }>()
 const [changeLoadingStatus] = useLoading(emits)
@@ -39,7 +41,7 @@ const scrollElement = document.documentElement
 const drawerShow = ref(false)
 
 // 文章详情
-const getArticleDetails = async (id:number) => {
+const getArticleDetails = async (id: number) => {
   let res = await getArticleById({ id })
   mdState.text = res.article_content
   articleInfo.value = res
@@ -57,10 +59,10 @@ const addReadingDuration = async (id) => {
 }
 
 const init = async (id) => {
-  changeLoadingStatus(true)
+  loadingState.chnageLoading(true)
   await getArticleDetails(id)
   // await addReadingDuration(lastArticleId)
-  changeLoadingStatus(false)
+  loadingState.chnageLoading(false)
 }
 watch(
   () => route,
@@ -194,7 +196,8 @@ const getImg = () => {
     .comm-item {
       padding: 10px;
       // background: rgba(255,255,255,.2);
-      background: var(--main);
+      // background: var(--main);
+      background: var(--article-comm-item-bgc);
       color: #fff;
       border-radius: var(--border-radius);
       opacity: 0.8;

@@ -8,8 +8,10 @@ const props = defineProps<IMainPageProps>()
 
 <template>
   <div class="home-main-page"> 
+
+    
     <homeMainLeftPage v-bind="$attrs" :config="config"/>
-    <!-- <homeMainLeftPage :config="config"/> -->
+
     <homeMainRightPageVue v-bind="$attrs" :articleList="articleList" :isTopArticleList="isTopArticleList"/>
     
     </div>
@@ -18,5 +20,7 @@ const props = defineProps<IMainPageProps>()
 <style scoped lang="scss"> 
 .home-main-page{
     display: flex;
+    width: 100%;
+    // overflow: hidden;
 }
 </style>

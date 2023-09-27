@@ -12,7 +12,7 @@ import CommonSvg from '@/components/CommonSvg/index.vue'
 <style scoped lang="scss">
 .home-notice-page {
   margin-bottom: var(--margin-bottom-16);
-  width: var(--w-100-persent);
+  // width: var(--w-100-persent);
   display: flex;
   align-items: center;
   padding: 20px 16px;

@@ -10,6 +10,8 @@
   --base-text-color-black: rgb(76, 73, 72);
   /* --base-text-color-white: rgba(255, 255, 255, 0.7); */
   --base-text-color-white: #fff;
+
+  --article-comm-item-bgc: rgba(0, 0, 0.2);
   --r: 22;
   --g: 119;
   --b: 179;
@@ -64,6 +66,7 @@
 }
 
 body {
+  overflow-x: hidden; /* 隐藏横向滚动条 */
   font-family:
     al,
     Inter,
@@ -88,4 +91,49 @@ body {
   src: url('./iconfont/Alimama_DongFangDaKai_Regular.ttf');
   font-weight: normal;
   font-style: normal;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}
+::scrollbar-track {
+  display: none;
+}
+/* 滚动条滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: var(--xy-main);
+  /* background-image: -webkit-linear-gradient(
+    45deg,
+    rgb(171, 245, 218) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgb(150, 212, 236) 50%,
+    rgb(239, 147, 228) 75%,
+    transparent 75%,
+    transparent
+  ); */
+  border-radius: 10px;
+}
+::scrollbar-thumb {
+   background-color: var(--xy-main);
+  /* background-image: -webkit-linear-gradient(
+    45deg,
+    rgb(171, 245, 218) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgb(150, 212, 236) 50%,
+    rgb(239, 147, 228) 75%,
+    transparent 75%,
+    transparent
+  ); */
+  border-radius: 10px;
 }

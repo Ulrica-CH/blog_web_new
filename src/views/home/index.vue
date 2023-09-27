@@ -3,7 +3,8 @@ import { onMounted } from 'vue'
 import homeNoticePage from './pages/homeNoticePage.vue'
 import homeMainPage from './pages/homeMainPage.vue'
 import { useArticle, useRightCount, useRightConfig, useLoading } from './hooks'
-
+import useLoadingStore from '@/store/loading'
+const loadingState = useLoadingStore()
 defineProps<{ loading: Boolean }>()
 const emits = defineEmits<{ onChangeLoading: [loading: boolean] }>()
 defineOptions({ name: 'Home' })
@@ -14,15 +15,16 @@ const { articleList, isTopArticleList, articleTotal, _homeGetArticleList } =
 const { infoCount, _homeGetStatistic } = useRightCount()
 /** 网站配置 */
 const { config, runtime, _homeGetConfig } = useRightConfig()
-/** Loading */
-const [changeLoadingStatus] = useLoading(emits)
 
 onMounted(async () => {
-  changeLoadingStatus(true)
+  loadingState.chnageLoading(true)
   await _homeGetStatistic()
   await _homeGetArticleList('init')
   await _homeGetConfig()
-  changeLoadingStatus(false)
+  loadingState.chnageLoading(false)
+  // setTimeout(() => {
+  //   loadingState.chnageLoading(false)
+  // },200000)
 })
 </script>
 
@@ -40,3 +42,10 @@ onMounted(async () => {
     />
   </div>
 </template>
+
+<style lang="scss">
+// .home {
+//   width: 100%;
+//   // overflow: hidden;
+// }
+</style>

@@ -15,7 +15,7 @@ import CommonNav from '@/components/CommonNav/index.vue'
 
 <style scoped lang="scss">
 .common-header-wrap {
-  z-index: 9999;
+  z-index: 999;
   position: fixed;
   left: 0;
   right: 0;

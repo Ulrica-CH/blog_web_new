@@ -1,11 +1,10 @@
 import { ref } from 'vue'
 
 export function useLoading() {
-  const loading = ref(false)
+  const loading = ref(true)
   const onChangeLoading = (flag: boolean) => {
-    console.log(flag)
     loading.value = flag
   }
 
-  return [loading,onChangeLoading]
+  return { loading, onChangeLoading }
 }

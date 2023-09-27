@@ -20,6 +20,16 @@
   animation: moveIn 1s;
 }
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 1s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
 @keyframes move {
   from {
     opacity: 1;
@@ -45,7 +55,7 @@
 /* breadcrumb transition */
 .breadcrumb-enter-active,
 .breadcrumb-leave-active {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .breadcrumb-enter,
@@ -55,7 +65,7 @@
 }
 
 .breadcrumb-move {
-  transition: all .4s;
+  transition: all 0.4s;
 }
 
 .breadcrumb-leave-active {
