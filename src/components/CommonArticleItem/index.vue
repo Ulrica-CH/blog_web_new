@@ -19,7 +19,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
       <img
         :src="article?.article_cover"
         alt=""
-        class="animate__animated animate__fadeInDown"
+        class="cover_img animate__animated animate__fadeInDown"
       />
     </div>
     <div class="content" :style="{ right: props.index % 2 === 0 && 0 }">
@@ -85,7 +85,8 @@ const { computedTime } = useComputed(props.article?.createdAt)
     border: var(--hover-border);
 
     .article-cover {
-      img {
+      // transform: scale(1.2);
+      .cover_img {
         transform: scale(1.2);
       }
     }
@@ -99,12 +100,13 @@ const { computedTime } = useComputed(props.article?.createdAt)
 
     transition: var(--transition-normal);
     overflow: hidden;
-    img {
+    .cover_img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       border-radius: var(--border-radius);
       transition: var(--transition-normal);
+      animation-fill-mode:none !important;
     }
   }
   .content {
