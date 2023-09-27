@@ -22,7 +22,7 @@ jobs:
         node-version: 16.20.0
     - run: npm i -g pnpm
     - run: pnpm install
-    - run: pnpm run build
+    - run: pnpm run build-only
     - run: ls -l
     - name: scp ssh pipelines
       uses: cross-the-world/ssh-scp-ssh-pipelines@latest
