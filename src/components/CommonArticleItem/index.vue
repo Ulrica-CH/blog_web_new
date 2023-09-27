@@ -10,8 +10,17 @@ const { computedTime } = useComputed(props.article?.createdAt)
 
 <template>
   <div class="comm-artice-item">
-    <div class="article-cover" :style="{ left: props.index % 2 === 0 && 0 }">
-      <img :src="article?.article_cover" alt="" />
+    <div
+      v-image
+      :data-src="article.article_cover"
+      class="article-cover"
+      :style="{position:'absolute', left: props.index % 2 === 0 && 0 }"
+    >
+      <img
+        :src="article?.article_cover"
+        alt=""
+        class="animate__animated animate__fadeInDown"
+      />
     </div>
     <div class="content" :style="{ right: props.index % 2 === 0 && 0 }">
       <div class="title item" @click="operate('detail', article)">
@@ -49,7 +58,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
         left: props.index % 2 === 0 && '10px'
       }"
     >
-     <CommonSvg icon="category" />
+      <CommonSvg icon="category" />
       {{ props.article?.categoryName }}
     </div>
   </div>
@@ -83,7 +92,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
   }
 
   .article-cover {
-    position: absolute;
+    position: relative;
     right: 0;
     width: 45%;
     height: 100%;
@@ -143,7 +152,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
     padding: 4px;
     @include flex();
     // background-color: var(--base-text-color-black);
-    background-color: rgba(0,0,0.2);
+    background-color: rgba(0, 0, 0.2);
     color: var(--base-text-color-white);
     border-radius: var(--border-radius);
   }

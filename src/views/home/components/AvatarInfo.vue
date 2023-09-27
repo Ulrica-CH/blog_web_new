@@ -9,7 +9,7 @@ const { countList } = useAvatarInfo()
 <template>
   <CommonCard noPadding>
     <div class="acatar-info">
-      <div class="img">
+      <div v-image :data-src="props?.config?.avatar_bg" class="img">
         <img :src="props?.config?.avatar_bg" alt="" />
 
         <div class="circle-wrap">

@@ -2,13 +2,13 @@
   <div class="layout">
     <Transition name="fade">
       <div v-show="loadingState.loading" class="loading">
-        <div class="img">
+        <!-- <div class="img" v-image :data-src="loadingImg">
           <img :src="loadingImg" alt="" />
 
           <div class="circle-wrap">
             <div class="circle"></div>
           </div>
-        </div>
+        </div> -->
         <div class="loading-title">加载中...</div>
       </div>
     </Transition>
@@ -53,15 +53,16 @@ import loadingImg from '@/assets/imgs/favicon.jpg'
     font-size: 34px;
     width: 100%;
     height: 100%;
-    .loading-title{
+    .loading-title {
       animation: opacity 1s ease-in-out;
       animation-iteration-count: infinite;
     }
     .img {
       position: relative;
       @include flex();
-      width: var(--w-100-percent);
-      height: 160px;
+      width: 120px;
+      height: 120px;
+      border-radius: var(--border-radius-circle);
       border-top-left-radius: var(--border-radius);
       border-top-right-radius: var(--border-radius);
       background-image: url('../../../assets/imgs/avatar_bg.webp');
@@ -97,7 +98,6 @@ import loadingImg from '@/assets/imgs/favicon.jpg'
         }
       }
     }
-    
   }
   .main {
     width: 100%;
@@ -114,16 +114,15 @@ import loadingImg from '@/assets/imgs/favicon.jpg'
   }
 
   @keyframes opacity {
-    0%{
+    0% {
       opacity: 1;
     }
-    50%{
-      opacity: .5;
+    50% {
+      opacity: 0.5;
     }
-     100%{
+    100% {
       opacity: 1;
     }
-    
   }
 }
 </style>
