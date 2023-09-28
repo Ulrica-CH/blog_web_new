@@ -1,14 +1,22 @@
 <script setup lang="ts">
 import CommonIcon from '@/components/CommonIcon/index.vue'
-import {useToggleLogo} from './hooks'
+import { useToggleLogo } from './hooks'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const { showIcon, mouseenter, mouseout } = useToggleLogo()
 </script>
 
 <template>
-  <div class="common-logo" @mouseenter="mouseenter" @mouseout="mouseout">
+  <div
+    class="common-logo"
+    @mouseenter="mouseenter"
+    @mouseout="mouseout"
+    @click="router.push('/home')"
+  >
     <span class="title" v-if="!showIcon">MichstaBe</span>
+
     <span v-else class="icon">
-      <CommonIcon icon="HomeFilled" size="30"/>
+      <CommonIcon icon="HomeFilled" size="30" />
     </span>
   </div>
 </template>
@@ -30,7 +38,7 @@ const { showIcon, mouseenter, mouseout } = useToggleLogo()
     @include flex();
     font-size: 24px;
   }
-  .icon{
+  .icon {
     @include flex();
   }
 }

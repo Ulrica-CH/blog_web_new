@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, watch, reactive, h } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { ElNotification } from 'element-plus'
 import { useLoading } from '@/hooks/index'
 import { storeToRefs } from 'pinia'
 import { IArticle } from '@/types'
@@ -208,12 +207,23 @@ const getImg = () => {
   }
   .md-preview {
     padding: 0 10px;
+    @include background_color('background_color');
+    @include font_color('text-color');
+    @include border('border');
+
+    .md-preview-v3 {
+      @include background_color('background_color');
+      @include font_color('text-color');
+    }
   }
 }
 
 .catalogue-card {
   margin-top: 1rem;
   padding: 1rem 0.5rem;
+  @include background_color('background_color');
+  @include font_color('text-color');
+  @include border('border');
 
   &__box {
     scrollbar-width: none;
@@ -410,7 +420,11 @@ const getImg = () => {
   line-height: 1.8;
   color: var(--font-color);
 }
-
+:deep(.md-editor-catalog-active){
+  span{
+    color: var(--xy-main);
+  }
+}
 a {
   text-decoration: underline;
 }

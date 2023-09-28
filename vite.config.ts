@@ -55,8 +55,7 @@ export default defineConfig({
         charset: false,
         /** 全局scss */
         additionalData: `
-        @import "./src/styles/mixin.scss";
-        @import "./src/styles/var.scss";
+        @import "./src/styles/index.scss";
         `
       }
     },
