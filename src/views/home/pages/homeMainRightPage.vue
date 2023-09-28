@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import CommonArticleItem from '@/components/CommonArticleItem/index.vue'
 import homeTopInfoPage from './homeTopInfo.vue'
-import { IMainRightPageProps } from '../props'
-defineProps<IMainRightPageProps>()
+import type { IMainRightPageProps } from '../props'
+import CommonPagination from '@/components/CommonPagination/index.vue'
+const props = defineProps<IMainRightPageProps>()
 </script>
 
 <template>
-  <div class="main-right-page">
+  <div class="main-right-page animate__animated animate__fadeInRight">
     <homeTopInfoPage :isTopArticleList="isTopArticleList"/>
     <div class="article-wrap">
       <CommonArticleItem
@@ -16,6 +17,8 @@ defineProps<IMainRightPageProps>()
         :key="index"
       />
     </div>
+
+    <CommonPagination v-model:params="props.params"/>
   </div>
 </template>
 

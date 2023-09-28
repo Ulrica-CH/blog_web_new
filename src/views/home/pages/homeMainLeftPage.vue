@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import {IMainLeftPageProps} from '../props'
+import type {IMainLeftPageProps} from '../props'
 defineProps<IMainLeftPageProps>()
 import AvatarInfo from '../components/AvatarInfo.vue'
 import Notice from '../components/Notice.vue'
@@ -9,7 +9,7 @@ import WebsiteStatistics from '../components/WebsiteStatistics.vue'
 </script>
 
 <template>
-  <div class="main-left-page">
+  <div class="main-left-page animate__animated animate__fadeInLeft">
     <AvatarInfo v-bind="$attrs" :config="config" />
 
     <Notice/>

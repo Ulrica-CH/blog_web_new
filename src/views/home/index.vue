@@ -5,11 +5,9 @@ import homeMainPage from './pages/homeMainPage.vue'
 import { useArticle, useRightCount, useRightConfig, useLoading } from './hooks'
 import useLoadingStore from '@/store/loading'
 const loadingState = useLoadingStore()
-defineProps<{ loading: Boolean }>()
-const emits = defineEmits<{ onChangeLoading: [loading: boolean] }>()
 defineOptions({ name: 'Home' })
 /** 文章 */
-const { articleList, isTopArticleList, articleTotal, _homeGetArticleList } =
+const { articleList, params,isTopArticleList, _homeGetArticleList } =
   useArticle()
 /** 右侧统计 */
 const { infoCount, _homeGetStatistic } = useRightCount()
@@ -22,9 +20,6 @@ onMounted(async () => {
   await _homeGetArticleList('init')
   await _homeGetConfig()
   loadingState.chnageLoading(false)
-  // setTimeout(() => {
-  //   loadingState.chnageLoading(false)
-  // },200000)
 })
 </script>
 
@@ -39,6 +34,7 @@ onMounted(async () => {
       :isTopArticleList="isTopArticleList"
       :config="config"
       :runtime="runtime"
+      :params="params"
     />
   </div>
 </template>

@@ -7,7 +7,7 @@ import type {
   IHomeGetStatistic,
   IConfig
 } from '@/types'
-import { reactive, ref, useAttrs, watch,defineEmits } from 'vue'
+import { reactive, ref, useAttrs, watch, defineEmits } from 'vue'
 import { useRouter } from 'vue-router'
 // const router = useRouter()
 /** 头部信息 */
@@ -18,7 +18,7 @@ export function useTopInfoPage() {
     { title: '标签', path: '/tag' },
     { title: '日志', path: '/log' }
   ]
- 
+
   const toPath = (path: string) => {
     router.push(path)
   }
@@ -28,30 +28,37 @@ export function useTopInfoPage() {
 /** 文章相关 */
 export function useArticle() {
   /** 文章 */
-  const param = reactive({
+  const params = reactive({
     current: 1, // 当前页
-    size: 10, // 每页条目数
-    loading: true // 加载
+    size: 6, // 每页条目数
+    total: 0
   })
   const articleList = ref<IArticle[]>([])
   /** 置顶文章 */
   const isTopArticleList = ref<IArticle[]>([])
-  const articleTotal = ref()
 
   /** 文章 */
   const _homeGetArticleList = async (type: string) => {
-    type == 'init' ? '' : (param.loading = true)
     const res: IArticleList = await homeGetArticleList({
-      current: param.current,
-      size: param.size
+      current: params.current,
+      size: params.size
     })
     articleList.value = res?.list
-    articleTotal.value = res?.total
-
-    isTopArticleList.value =  res?.list.filter(item => item.is_top === 1)
+    params.total = res?.total
+    isTopArticleList.value = res?.list.filter((item) => item.is_top === 1)
   }
-  
-  return { articleList, isTopArticleList,articleTotal, _homeGetArticleList }
+  watch(
+    () => params.current,
+    (newVal) => {
+      _homeGetArticleList()
+    }
+  )
+  return {
+    articleList,
+    params,
+    isTopArticleList,
+    _homeGetArticleList
+  }
 }
 export function usePathToArtDetail() {
   const router = useRouter()
@@ -59,7 +66,7 @@ export function usePathToArtDetail() {
   const operate = (type: string, article: IArticle, index?: number) => {
     switch (type) {
       case 'detail':
-        console.log(router,article)
+        console.log(router, article)
         router.push({ path: '/article', query: { id: article.id } })
         break
       case 'tag':
@@ -102,22 +109,22 @@ export function useRightConfig() {
     view_time: 0
   })
   const runtime = ref(0)
-  const calcRuntimeDays = (time:string) => {
+  const calcRuntimeDays = (time: string) => {
     if (time) {
-      time = time.replace(/\-/g, "/"); // 解决ios系统上格式化时间出现NAN的bug
-      const now = new Date().getTime();
-      const created = new Date(time).getTime();
-      const days = Math.floor((now - created) / 8.64e7);
-      runtime.value = days;
+      time = time.replace(/\-/g, '/') // 解决ios系统上格式化时间出现NAN的bug
+      const now = new Date().getTime()
+      const created = new Date(time).getTime()
+      const days = Math.floor((now - created) / 8.64e7)
+      runtime.value = days
       console.log(days)
     }
-  };
+  }
   const _homeGetConfig = async () => {
     const res = await homeGetConfig()
     config.value = res
     calcRuntimeDays(config.value.createdAt)
   }
-  return { config,runtime, _homeGetConfig }
+  return { config, runtime, _homeGetConfig }
 }
 /**  */
 export function useAvatarInfo() {
@@ -140,7 +147,7 @@ export function useAvatarInfo() {
   watch(
     () => attrs.infoCount,
     (newVal: IHomeGetStatistic & HomeStatisticUpdate) => {
-      countList.forEach(item => {
+      countList.forEach((item) => {
         item.count = newVal[item.key]
       })
     }
@@ -148,9 +155,9 @@ export function useAvatarInfo() {
 
   return { countList }
 }
-export function useLoading(emits:any) {
-  const changeLoadingStatus = (flag:boolean) => {
-    emits("onChangeLoading", flag) 
+export function useLoading(emits: any) {
+  const changeLoadingStatus = (flag: boolean) => {
+    emits('onChangeLoading', flag)
   }
 
   return [changeLoadingStatus]

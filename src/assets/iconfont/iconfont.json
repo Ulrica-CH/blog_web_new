@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "6988583",
+      "name": "智能日志管理平台",
+      "font_class": "zhinengrizhiguanlipingtai",
+      "unicode": "e67e",
+      "unicode_decimal": 59006
+    },
+    {
+      "icon_id": "7037111",
+      "name": "学习中心",
+      "font_class": "xuexizhongxin",
+      "unicode": "e710",
+      "unicode_decimal": 59152
+    },
+    {
+      "icon_id": "9982156",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e62f",
+      "unicode_decimal": 58927
+    },
+    {
+      "icon_id": "16017193",
+      "name": "17home",
+      "font_class": "17home",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "26758310",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "31671132",
+      "name": "知识学习",
+      "font_class": "zhishixuexi",
+      "unicode": "e666",
+      "unicode_decimal": 58982
+    },
+    {
       "icon_id": "25508141",
       "name": "公告",
       "font_class": "gonggao",

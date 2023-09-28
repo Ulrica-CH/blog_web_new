@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { subRouter } from '@/router/subRouter'
-import CommonIcon from '@/components/CommonIcon/index.vue'
+import CommonSvg from '@/components/CommonSvg/index.vue'
 import { RouterLink } from 'vue-router'
 import { useNavRouter ,useComputed} from './hooks'
 const [toPath] = useNavRouter()
@@ -15,7 +15,7 @@ const [routerArr] = useComputed(subRouter)
       :key="index"
       @click="toPath(item.path)"
     >
-      <CommonIcon :icon="item.meta?.icon" size="18" />
+      <CommonSvg :icon="item.meta?.icon" />
       <RouterLink class="router-link" :to="item.path">{{
         item.meta?.title
       }}</RouterLink>
@@ -43,6 +43,7 @@ const [routerArr] = useComputed(subRouter)
       .router-link-active {
         color: var(--base-text-color-white);
       }
+
     }
     .title {
       margin-left: 4px;
@@ -56,14 +57,14 @@ const [routerArr] = useComputed(subRouter)
     position: relative;
     color: var(--xy-main);
 
-    &::after {
-      content: '';
-      @include positionA(_, _, -6px, -22px);
-      display: inline-block;
-      width: 58px;
-      height: 2px;
-      background-color: var(--xy-main);
-    }
+    // &::after {
+    //   content: '';
+    //   @include positionA(_, _, -6px, -22px);
+    //   display: inline-block;
+    //   // width: 58px;
+    //   height: 2px;
+    //   background-color: var(--xy-main);
+    // }
   }
 }
 </style>

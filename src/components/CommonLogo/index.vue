@@ -6,7 +6,7 @@ const { showIcon, mouseenter, mouseout } = useToggleLogo()
 
 <template>
   <div class="common-logo" @mouseenter="mouseenter" @mouseout="mouseout">
-    <span class="title" v-if="!showIcon">Logo</span>
+    <span class="title" v-if="!showIcon">MichstaBe</span>
     <span v-else class="icon">
       <CommonIcon icon="HomeFilled" size="30"/>
     </span>
@@ -15,10 +15,10 @@ const { showIcon, mouseenter, mouseout } = useToggleLogo()
 
 <style scoped lang="scss">
 .common-logo {
-  width: 100px;
+  @include flex();
+  width: 120px;
   padding: 10px 0;
   border-radius: var(--border-radius);
-
   cursor: pointer;
   transition: var(--transition-normal);
 
