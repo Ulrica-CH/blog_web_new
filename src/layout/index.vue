@@ -2,13 +2,6 @@
   <div class="layout">
     <Transition name="fade">
       <div v-show="loadingState.loading" class="loading">
-        <!-- <div class="img" v-image :data-src="loadingImg">
-          <img :src="loadingImg" alt="" />
-
-          <div class="circle-wrap">
-            <div class="circle"></div>
-          </div>
-        </div> -->
         <div class="loading-title">加载中...</div>
       </div>
     </Transition>
@@ -32,14 +25,15 @@ import CommonHeader from '@/components/CommonHeader/index.vue'
 import CommonFooter from '@/components/CommonFooter/index.vue'
 import useLoadingStore from '@/store/loading'
 const loadingState = useLoadingStore()
-import loadingImg from '@/assets/imgs/favicon.jpg'
 </script>
 
 <style scoped lang="scss">
 .layout {
   width: 100%;
   box-sizing: border-box;
-  // overflow: hidden;
+
+  @include background_color('body_background_color');
+  @include font_color('text-color');
   .loading {
     z-index: 9999;
     position: fixed;
@@ -48,8 +42,8 @@ import loadingImg from '@/assets/imgs/favicon.jpg'
     right: 0;
     bottom: 0;
     @include flex($direction: column);
-    background-color: #fff;
-    color: var(--xy-main);
+    @include background_color('background_color');
+    @include font_color('text-color');
     font-size: 34px;
     width: 100%;
     height: 100%;
@@ -104,7 +98,7 @@ import loadingImg from '@/assets/imgs/favicon.jpg'
     margin: 60px auto 0;
     padding: 20px;
     box-sizing: border-box;
-    background-color: #f4f6fc;
+    // background-color: #f4f6fc;
     // overflow: hidden;
   }
 

@@ -1,0 +1,35 @@
+@import "./theme.scss";
+
+//遍历主题map
+@mixin themeify {
+  @each $theme-name, $theme-map in $themes {
+    $theme-map: $theme-map !global;
+    [data-theme="#{$theme-name}"] & {
+      @content;
+    }
+  }
+}
+
+//声明一个根据Key获取颜色的function
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}
+
+//获取背景颜色
+@mixin background_color($color) {
+  @include themeify {
+    background: themed($color);
+  }
+}
+//获取字体颜色
+@mixin font_color($color) {
+  @include themeify {
+    color: themed($color);
+  }
+}
+//获取字体颜色
+@mixin border($border) {
+  @include themeify {
+    border: themed($border);
+  }
+}

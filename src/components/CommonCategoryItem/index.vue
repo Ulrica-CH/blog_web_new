@@ -28,7 +28,7 @@ const props = defineProps<{
   font-size: 22px;
   font-weight: 600;
   padding: 32px;
-  border: var(--base-border);
+  @include border('border');;
   display: flex;
   justify-content: center;
   flex-direction: column;

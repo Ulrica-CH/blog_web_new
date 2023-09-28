@@ -14,7 +14,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
       v-image
       :data-src="article.article_cover"
       class="article-cover"
-      :style="{position:'absolute', left: props.index % 2 === 0 && 0 }"
+      :style="{ position: 'absolute', left: props.index % 2 === 0 && 0 }"
     >
       <img
         :src="article?.article_cover"
@@ -71,14 +71,14 @@ const { computedTime } = useComputed(props.article?.createdAt)
   width: 100%;
   height: 220px;
   margin-bottom: var(--margin-bottom-16);
-  background-color: var(--card-bg);
+  @include background_color('background_color');
+  @include font_color('text-color');
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  border: var(--base-border);
+  @include border('border');;
   overflow: hidden;
   transition: var(--transition-normal);
   cursor: pointer;
-  color: var(--base-text-color-black);
   &:hover {
     box-shadow: var(--main-shadow);
     transform: translateX(6px);
@@ -106,7 +106,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
       object-fit: cover;
       border-radius: var(--border-radius);
       transition: var(--transition-normal);
-      animation-fill-mode:none !important;
+      animation-fill-mode: none !important;
     }
   }
   .content {
@@ -131,14 +131,12 @@ const { computedTime } = useComputed(props.article?.createdAt)
     @include flex();
 
     .tags {
-      // @include positionA(_, 0, 0, _);
       @include flex();
       .tag {
         @include flex();
         margin: 0 4px;
         padding: 6px;
         border-radius: var(--border-radius);
-        background: var(--global-bg-lighter);
         cursor: pointer;
       }
     }
@@ -149,23 +147,17 @@ const { computedTime } = useComputed(props.article?.createdAt)
   }
   .category {
     position: absolute;
-    // left: 10px;
     top: 10px;
     padding: 4px;
     @include flex();
-    // background-color: var(--base-text-color-black);
     background-color: rgba(0, 0, 0.2);
     color: var(--base-text-color-white);
     border-radius: var(--border-radius);
   }
   .desc {
-    // @include positionA(_, 66px, _, 0);
     padding: 0 20px;
-    // width: var(--w-100-percent);
     font-size: 14px;
-    color: var(--base-text-color-black);
     word-wrap: break-word;
-    // transform: translateX(-500px);
     transition: var(--transition-normal);
   }
 }

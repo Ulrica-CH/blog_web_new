@@ -1,26 +1,26 @@
 <script setup lang="ts">
 import CommonSvg from '@/components/CommonSvg/index.vue'
+import CommonCard from '@/components/CommonCard/index.vue'
 </script>
 
 <template>
-  <div class="home-notice-page">
-    <CommonSvg icon="gonggao" class="notice-icon" />
-    <div class="content">V3 + TS + Vite 重构 web....</div>
-  </div>
+  <CommonCard noPadding>
+    <div class="home-notice-page">
+      <CommonSvg icon="gonggao" class="notice-icon" />
+      <div class="content">V3 + TS + Vite 重构 web....</div>
+    </div>
+  </CommonCard>
 </template>
 
 <style scoped lang="scss">
 .home-notice-page {
-  margin-bottom: var(--margin-bottom-16);
-  // width: var(--w-100-persent);
+  width: var(--w-100-percent);
   display: flex;
   align-items: center;
   padding: 20px 16px;
   border-radius: var(--border-radius);
-  background: var(--card-bg);
   box-shadow: var(--box-shadow);
-  border: var(--base-border);
-  color: var(--base-text-color-black);
+  @include border('border');;
   transition: var(--transition-normal);
   &:hover {
     border: var(--hover-border);

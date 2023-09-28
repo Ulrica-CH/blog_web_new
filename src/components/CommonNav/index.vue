@@ -2,9 +2,11 @@
 import { subRouter } from '@/router/subRouter'
 import CommonSvg from '@/components/CommonSvg/index.vue'
 import { RouterLink } from 'vue-router'
-import { useNavRouter ,useComputed} from './hooks'
+import { useNavRouter, useComputed } from './hooks'
+import { changeTheme } from '@/hooks'
 const [toPath] = useNavRouter()
 const [routerArr] = useComputed(subRouter)
+const { isDark, handleChangeThemes } = changeTheme()
 </script>
 
 <template>
@@ -20,6 +22,10 @@ const [routerArr] = useComputed(subRouter)
         item.meta?.title
       }}</RouterLink>
     </div>
+    <el-switch
+      v-model="isDark"
+      @change="(value: boolean) => handleChangeThemes(value)"
+    />
   </div>
 </template>
 
@@ -34,16 +40,20 @@ const [routerArr] = useComputed(subRouter)
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition-normal);
+
+    .router-link {
+      @include font_color('text-color');
+    }
     &:hover {
       @include hoverCommStyle();
 
       .router-link {
-        color: var(--base-text-color-white);
+        @include font_color('text-color');
       }
       .router-link-active {
-        color: var(--base-text-color-white);
+        // @include font_color('text-color');
+       color:#fff !important;
       }
-
     }
     .title {
       margin-left: 4px;
@@ -55,16 +65,7 @@ const [routerArr] = useComputed(subRouter)
   }
   .router-link-active {
     position: relative;
-    color: var(--xy-main);
-
-    // &::after {
-    //   content: '';
-    //   @include positionA(_, _, -6px, -22px);
-    //   display: inline-block;
-    //   // width: 58px;
-    //   height: 2px;
-    //   background-color: var(--xy-main);
-    // }
+    color: var(--xy-main) !important;
   }
 }
 </style>

@@ -1,0 +1,14 @@
+$themes: (
+  light: (
+    background_color: var(--card-bg),
+    body_background_color: var(--bg-white),
+    text-color: var(--base-text-color-black),
+    border: 1px solid #e0e3ed
+  ),
+  dark: (
+    background_color: #181c27,
+    body_background_color: #181c27,
+    text-color: #bebebe,
+    border: 1px solid #727375
+  )
+);
