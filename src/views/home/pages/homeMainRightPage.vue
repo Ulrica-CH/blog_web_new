@@ -3,23 +3,26 @@ import CommonArticleItem from '@/components/CommonArticleItem/index.vue'
 import homeTopInfoPage from './homeTopInfo.vue'
 import type { IMainRightPageProps } from '../props'
 import CommonPagination from '@/components/CommonPagination/index.vue'
+import CommonCol from '@/components/CommonCol/index.vue'
+
 const props = defineProps<IMainRightPageProps>()
 </script>
 
 <template>
-  <div class="main-right-page animate__animated animate__fadeInRight">
-    <homeTopInfoPage :isTopArticleList="isTopArticleList"/>
-    <div class="article-wrap">
-      <CommonArticleItem
-        v-for="(item, index) in articleList"
-        :article="item"
-        :index="index"
-        :key="index"
-      />
+  <CommonCol :xs="24" :sm="18" :lg="18" :xl="18">
+    <div class="main-right-page animate__animated animate__fadeInRight">
+      <homeTopInfoPage :isTopArticleList="isTopArticleList" />
+      <div class="article-wrap">
+        <CommonArticleItem
+          v-for="(item, index) in articleList"
+          :article="item"
+          :index="index"
+          :key="index"
+        />
+      </div>
+      <CommonPagination v-model:params="props.params" />
     </div>
-
-    <CommonPagination v-model:params="props.params"/>
-  </div>
+  </CommonCol>
 </template>
 
 <style scoped lang="scss">

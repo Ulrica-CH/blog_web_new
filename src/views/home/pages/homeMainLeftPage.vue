@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import type {IMainLeftPageProps} from '../props'
+import CommonCol from '@/components/CommonCol/index.vue'
+import type { IMainLeftPageProps } from '../props'
 defineProps<IMainLeftPageProps>()
 import AvatarInfo from '../components/AvatarInfo.vue'
 import Notice from '../components/Notice.vue'
@@ -9,26 +10,24 @@ import WebsiteStatistics from '../components/WebsiteStatistics.vue'
 </script>
 
 <template>
-  <div class="main-left-page animate__animated animate__fadeInLeft">
-    <AvatarInfo v-bind="$attrs" :config="config" />
+  <CommonCol :xs="0" :sm="6" :lg="6" :xl="6">
+    <div class="main-left-page animate__animated animate__fadeInLeft">
+      <AvatarInfo v-bind="$attrs" :config="config" />
 
-    <Notice/>
+      <Notice />
 
-    <Tags/>
+      <Tags />
 
-    <AnnualStatistics/>
+      <AnnualStatistics />
 
-    <WebsiteStatistics v-bind="$attrs"/>
-  </div>
+      <WebsiteStatistics v-bind="$attrs" />
+    </div>
+  </CommonCol>
 </template>
 
 <style scoped lang="scss">
 .main-left-page {
-  width: 300px;
-  margin-right: 20px;
-}
-.main-left-page,
-.pc {
-  min-width: 300px;
+  width: 94%;
+  // margin-right: 20px;
 }
 </style>

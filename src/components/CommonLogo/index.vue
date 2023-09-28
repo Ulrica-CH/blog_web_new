@@ -42,4 +42,9 @@ const { showIcon, mouseenter, mouseout } = useToggleLogo()
     @include flex();
   }
 }
+@media screen and (max-width: 768px) {
+  .common-logo {
+    display: none;
+  }
+}
 </style>

@@ -33,4 +33,9 @@ import CommonNav from '@/components/CommonNav/index.vue'
     height: var(--h-100-percent);
   }
 }
+@media screen and (max-width: 768px) {
+  .common-header-wrap {
+    height: 40px;
+  }
+}
 </style>

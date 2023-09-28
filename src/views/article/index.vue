@@ -420,17 +420,21 @@ const getImg = () => {
   line-height: 1.8;
   color: var(--font-color);
 }
-:deep(.md-editor-catalog-active){
-  span{
+:deep(.md-editor-catalog-active) {
+  span {
     color: var(--xy-main);
   }
 }
 a {
   text-decoration: underline;
 }
-@media screen and (min-width: 768px) {
-  .mobile-recommend {
-    display: none;
+@media screen and (max-width: 768px) {
+  .article {
+    .article_box {
+      .header-info {
+        display: none;
+      }
+    }
   }
 }
 </style>

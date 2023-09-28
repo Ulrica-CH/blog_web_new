@@ -10,6 +10,7 @@ declare module 'vue' {
     CommonArticleItem: typeof import('./src/components/CommonArticleItem/index.vue')['default']
     CommonCard: typeof import('./src/components/CommonCard/index.vue')['default']
     CommonCategoryItem: typeof import('./src/components/CommonCategoryItem/index.vue')['default']
+    CommonCol: typeof import('./src/components/CommonCol/index.vue')['default']
     CommonFooter: typeof import('./src/components/CommonFooter/index.vue')['default']
     CommonHeader: typeof import('./src/components/CommonHeader/index.vue')['default']
     CommonIcon: typeof import('./src/components/CommonIcon/index.vue')['default']

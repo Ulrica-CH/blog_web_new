@@ -2,31 +2,30 @@
 import { useTopInfoPage, usePathToArtDetail } from '../hooks/index'
 import type { IArticle } from '@/types'
 defineProps<{ isTopArticleList: IArticle[] }>()
-const { leftBottomItem, toPath } = useTopInfoPage()
 const [operate] = usePathToArtDetail()
-const getImg = (item) => `url(${item.article_cover})`
+const getImg = (item: any) => `url(${item.article_cover})`
 </script>
 
 <template>
   <div class="home-top-info">
-    <div class="item right">
-      <el-carousel trigger="click" height="150px">
-        <el-carousel-item v-for="item in isTopArticleList" :key="item">
-          <div
-            class="is_top_item"
-            :style="{ backgroundImage: getImg(item) }"
-            @click="operate('detail', item)"
-          >
-            <div class="title">{{ item.article_title }}</div>
-            <div class="desc">{{ item.article_description }}</div>
-            <div class="create">
-              发布时间：{{ item.createdAt?.split(' ')[0] }}
+      <div class="item right">
+        <el-carousel trigger="click" height="150px">
+          <el-carousel-item v-for="item in isTopArticleList" :key="item">
+            <div
+              class="is_top_item"
+              :style="{ backgroundImage: getImg(item) }"
+              @click="operate('detail', item)"
+            >
+              <div class="title">{{ item.article_title }}</div>
+              <div class="desc">{{ item.article_description }}</div>
+              <div class="create">
+                发布时间：{{ item.createdAt?.split(' ')[0] }}
+              </div>
             </div>
-          </div>
-        </el-carousel-item>
-      </el-carousel>
+          </el-carousel-item>
+        </el-carousel>
+      </div>
     </div>
-  </div>
 </template>
 
 <style scoped lang="scss">

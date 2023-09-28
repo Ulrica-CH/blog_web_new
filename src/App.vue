@@ -1,3 +1,12 @@
+<script lang="ts" setup>
+import { onMounted } from 'vue';
+import { isMobile } from './utils';
+
+onMounted(() => {
+  console.log(isMobile())
+})
+</script>
+
 <template>
   <div class="app">
     

@@ -75,4 +75,9 @@ const technologyList = [
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .common-footer{
+    display: none;
+  }
+}
 </style>

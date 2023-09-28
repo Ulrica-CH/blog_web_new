@@ -161,4 +161,22 @@ const { computedTime } = useComputed(props.article?.createdAt)
     transition: var(--transition-normal);
   }
 }
+
+@media screen and (max-width: 768px){
+  .comm-artice-item {
+    position: relative;
+  @include flex($justify: space-between);
+  width: 100%;
+  height: 140px;
+  margin-bottom: var(--margin-bottom-16);
+  @include background_color('background_color');
+  @include font_color('text-color');
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  @include border('border');;
+  overflow: hidden;
+  transition: var(--transition-normal);
+  cursor: pointer;
+  }
+}
 </style>

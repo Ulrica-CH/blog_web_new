@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import CommonSvg from '@/components/CommonSvg/index.vue'
 import CommonCard from '@/components/CommonCard/index.vue'
+import CommonCol from '@/components/CommonCol/index.vue'
 </script>
 
 <template>
-  <CommonCard noPadding>
-    <div class="home-notice-page">
-      <CommonSvg icon="gonggao" class="notice-icon" />
-      <div class="content">V3 + TS + Vite 重构 web....</div>
-    </div>
-  </CommonCard>
+  <CommonCol :xs="0" :sm="0" :lg="24" :xl="24">
+    <CommonCard noPadding>
+      <div class="home-notice-page">
+        <CommonSvg icon="gonggao" class="notice-icon" />
+        <div class="content">V3 + TS + Vite 重构 web....</div>
+      </div>
+    </CommonCard>
+  </CommonCol>
 </template>
 
 <style scoped lang="scss">
@@ -20,7 +23,7 @@ import CommonCard from '@/components/CommonCard/index.vue'
   padding: 20px 16px;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  @include border('border');;
+  @include border('border');
   transition: var(--transition-normal);
   &:hover {
     border: var(--hover-border);

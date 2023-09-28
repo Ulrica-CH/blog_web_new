@@ -5,7 +5,7 @@
         <div class="loading-title">加载中...</div>
       </div>
     </Transition>
-
+    
     <Transition name="fade">
       <div style="width: 100%" v-show="!loadingState.loading">
         <CommonHeader />
@@ -96,7 +96,7 @@ const loadingState = useLoadingStore()
   .main {
     width: 100%;
     margin: 60px auto 0;
-    padding: 20px;
+    padding-top: 16px;
     box-sizing: border-box;
     // background-color: #f4f6fc;
     // overflow: hidden;
