@@ -75,7 +75,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
   @include font_color('text-color');
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  @include border('border');;
+  @include border('border');
   overflow: hidden;
   transition: var(--transition-normal);
   cursor: pointer;
@@ -162,21 +162,38 @@ const { computedTime } = useComputed(props.article?.createdAt)
   }
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 768px) {
   .comm-artice-item {
+    
     position: relative;
-  @include flex($justify: space-between);
-  width: 100%;
-  height: 140px;
-  margin-bottom: var(--margin-bottom-16);
-  @include background_color('background_color');
-  @include font_color('text-color');
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  @include border('border');;
-  overflow: hidden;
-  transition: var(--transition-normal);
-  cursor: pointer;
+    @include flex($justify: space-between);
+    flex-direction: column;
+    width: 96%;
+    height: 240px;
+    margin: 0 auto;
+    margin-bottom: 16px;
+    @include background_color('background_color');
+    @include font_color('text-color');
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    @include border('border');
+    overflow: hidden;
+    transition: var(--transition-normal);
+    cursor: pointer;
+
+    border-radius: 5px 5px 8px 8px;
+    box-shadow: var(--box-mob-shadow)!important;
+    .article-cover{
+      position: relative !important;
+      width: 100%;
+    }
+    .content{
+      position: relative !important;
+      font-size: 18px;
+    }
+    .category{
+      display: none;
+    }
   }
 }
 </style>

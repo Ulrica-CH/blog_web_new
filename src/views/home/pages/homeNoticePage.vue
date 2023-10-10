@@ -2,6 +2,9 @@
 import CommonSvg from '@/components/CommonSvg/index.vue'
 import CommonCard from '@/components/CommonCard/index.vue'
 import CommonCol from '@/components/CommonCol/index.vue'
+
+const {notice} = defineProps<{ notice: any }>()
+
 </script>
 
 <template>
@@ -9,7 +12,7 @@ import CommonCol from '@/components/CommonCol/index.vue'
     <CommonCard noPadding>
       <div class="home-notice-page">
         <CommonSvg icon="gonggao" class="notice-icon" />
-        <div class="content">V3 + TS + Vite 重构 web....</div>
+        <div class="content">{{ notice.blog_notice }}</div>
       </div>
     </CommonCard>
   </CommonCol>

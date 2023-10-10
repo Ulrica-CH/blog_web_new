@@ -13,9 +13,25 @@ const technologyList = [
 
 <template>
   <div class="common-footer">
-    <div class="item mb-16">MichstaBe | 个人博客</div>
+    <div class="item mb-16">MichstaBe | 个人博客 | 蒙ICP备2021004700号</div>
 
-    <div class="item mb-16">备案号</div>
+    <div class="item mb-16">
+      参考：
+      <a
+        class="to-link"
+        href="http://mrzym.top/#/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >小张的博客</a
+      >
+      <a
+        class="to-link"
+        href="https://blog.leonus.cn/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >Lenous</a
+      >
+    </div>
 
     <div class="technologyList-wrap">
       <span
@@ -33,12 +49,29 @@ const technologyList = [
 .common-footer {
   @include flex($direction: column);
   color: var(--base-text-color-white);
+  margin: 16px auto 0;
+  // width: 98%;
   height: 180px;
-  background-color: rgba(0, 0, 0, 0.3);
+  @include background_color('background_color');
+  @include font_color('text-color');
+  @include border('border');
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
   font-size: 20px;
-
+  // color: var(--base-text-color-black);
+  .to-link {
+    display: inline-block;
+    margin-right: 16px;
+    @include background_color('background_color');
+    @include font_color('text-color');
+    transition: var(--transition-normal);
+    &:hover {
+      color: var(--xy-main);
+    }
+  }
   .technologyList-wrap {
     font-size: 16px;
+    color: var(--base-text-color-white);
     .technology-item {
       display: inline-block;
       margin: 10px;
@@ -76,7 +109,7 @@ const technologyList = [
   }
 }
 @media screen and (max-width: 768px) {
-  .common-footer{
+  .common-footer {
     display: none;
   }
 }

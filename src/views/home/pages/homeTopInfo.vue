@@ -81,4 +81,11 @@ const getImg = (item: any) => `url(${item.article_cover})`
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .home-top-info{
+ display: none;
+  }
+ 
+}
 </style>

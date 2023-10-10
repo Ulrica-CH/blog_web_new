@@ -39,5 +39,10 @@ export const subRouter: RouteRecordRaw[] = [
     path: '/study',
     meta: { title: '学习记录', icon: 'xuexizhongxin' },
     component: () => import('@/views/study/index.vue')
+  },
+  {
+    path: '/friend',
+    meta: { title: '友链', icon: 'jiaoyou' },
+    component: () => import('@/views/friend/index.vue')
   }
 ]

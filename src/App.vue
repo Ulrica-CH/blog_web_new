@@ -14,7 +14,7 @@ onMounted(() => {
   </div>
 </template>
 <style scoped lang="scss">
-.app {
+html,body,.app {
   width: 100vw;
   height: auto;
   background-color: var(--bg-white);

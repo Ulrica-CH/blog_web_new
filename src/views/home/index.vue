@@ -26,7 +26,7 @@ onMounted(async () => {
 <template>
   <div class="home">
     <!-- home 顶部信息 -->
-    <homeNoticePage />
+    <homeNoticePage :notice="config"/>
     <!-- 文章 侧边栏 -->
     <homeMainPage
       :infoCount="infoCount"
