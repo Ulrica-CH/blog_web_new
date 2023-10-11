@@ -16,12 +16,14 @@ defineProps<{ noPadding?: boolean; title?: string }>()
   padding: 20px 20px;
   @include background_color('background_color');
   @include font_color('text-color');
-  border-radius: var(--border-radius);
+  border-radius: 10px;
   transition: var(--transition-normal);
   @include border('border');
+  @include cardShadow('shadow');
+
   height: auto;
   &:hover {
-    border: var(--hover-border);
+    // border: var(--hover-border);
     transform: translateX(-10px);
   }
   .title {

@@ -24,14 +24,6 @@ const {notice} = defineProps<{ notice: any }>()
   display: flex;
   align-items: center;
   padding: 20px 16px;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  @include border('border');
-  transition: var(--transition-normal);
-  &:hover {
-    border: var(--hover-border);
-    box-shadow: var(--main-shadow);
-  }
   .notice-icon {
     animation: tran 1s;
     animation-iteration-count: infinite;

@@ -1,21 +1,16 @@
 <script setup lang="ts">
 interface IDialogProps {
-  dialogProps: {
-    dialogVisible?: boolean
-    title?: string
-    width: string
-  }
+  dialogVisible?: boolean
+  title?: string
+  width: string
+  center?:boolean
 }
-const deafault = withDefaults(defineProps<IDialogProps>(), {
-  dialogProps: () => {
-    return {
-      dialogVisible: true,
-      title: '888',
-      width: '30%'
-    }
-  }
+const props = withDefaults(defineProps<IDialogProps>(), {
+  dialogVisible: true,
+  title: '新增',
+  width: '30%',
+  center: true
 })
-console.log(deafault.dialogProps)
 const emit = defineEmits(['handleClose', 'handleSubmit'])
 function handleClose() {
   emit('handleClose', false)
@@ -27,9 +22,10 @@ function handleSubmit() {
 
 <template>
   <el-dialog
-    v-model="deafault.dialogProps.dialogVisible"
-    :title="deafault.dialogProps.title"
-    :width="deafault.dialogProps.width"
+    v-model="props.dialogVisible"
+    :title="props.title"
+    :width="props.width"
+    :center="props.center"
     @close="handleClose"
   >
     <slot />

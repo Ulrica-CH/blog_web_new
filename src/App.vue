@@ -17,6 +17,7 @@ onMounted(() => {
 html,body,.app {
   width: 100vw;
   height: auto;
-  background-color: var(--bg-white);
+  // background-color: var(--bg-white);
+  background-color: #e5ebf5;
 }
 </style>

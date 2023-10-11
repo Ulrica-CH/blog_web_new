@@ -74,15 +74,15 @@ const { computedTime } = useComputed(props.article?.createdAt)
   @include background_color('background_color');
   @include font_color('text-color');
   border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
   @include border('border');
+  @include cardShadow('shadow');
   overflow: hidden;
   transition: var(--transition-normal);
   cursor: pointer;
   &:hover {
-    box-shadow: var(--main-shadow);
+    // box-shadow: var(--main-shadow);
     transform: translateX(6px);
-    border: var(--hover-border);
+    // border: var(--hover-border);
 
     .article-cover {
       // transform: scale(1.2);
@@ -164,7 +164,6 @@ const { computedTime } = useComputed(props.article?.createdAt)
 
 @media screen and (max-width: 768px) {
   .comm-artice-item {
-    
     position: relative;
     @include flex($justify: space-between);
     flex-direction: column;
@@ -175,14 +174,13 @@ const { computedTime } = useComputed(props.article?.createdAt)
     @include background_color('background_color');
     @include font_color('text-color');
     border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
     @include border('border');
     overflow: hidden;
     transition: var(--transition-normal);
     cursor: pointer;
-
     border-radius: 5px 5px 8px 8px;
-    box-shadow: var(--box-mob-shadow)!important;
+    // box-shadow: var(--box-mob-shadow)!important;
+    @include cardShadow('shadow');
     .article-cover{
       position: relative !important;
       width: 100%;

@@ -54,6 +54,20 @@
   --box-shadow: 3px 6px 6px -3px rgba(45, 45, 45, 0.05);
   --box-mob-shadow: 3px 6px 6px 6px rgba(45, 45, 45, 0.05);
   --main-shadow: 3px 6px 6px -3px rgba(var(--r), var(--g), var(--b), 0.2);
+  --card-boxshadow: 2px 2px #dce2f0, inset -2px -2px 2px 1px #fff,
+    inset 2px 2px 4px 2px #dce2f0;
+  --card-boxshadow-black: 2px 2px #727375, inset -2px -2px 2px 1px #000,
+    inset 2px 2px 4px 2px #727375;
+
+  --circle-boxshadow: -10px -10px 15px rgba(255, 255, 255.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+
+     --circle-boxshadow-black: -10px -10px 15px #1d1e1f,
+    10px 10px 15px #343536,
+    inset -10px -10px 15px #1d1e1f,
+    inset 10px 10px 15px #343536;
   /* transform */
   --transition-normal: all 0.3s;
 }
@@ -129,7 +143,7 @@ body {
   border-radius: 10px;
 }
 ::scrollbar-thumb {
-   background-color: var(--xy-main);
+  background-color: var(--xy-main);
   /* background-image: -webkit-linear-gradient(
     45deg,
     rgb(171, 245, 218) 25%,

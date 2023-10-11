@@ -1,15 +1,22 @@
 $themes: (
   light: (
-    background_color: var(--card-bg),
+    // background_color: var(--card-bg),
+    background_color: #f0f3f9,
     body_background_color: var(--bg-white),
     text-color: var(--base-text-color-black),
     text-color-white: var(--base-text-color-white),
-    border: 1px solid #e0e3ed
+    border: 1px solid #e0e3ed,
+    circleBorder: 8px solid #f8f8f8,
+    shadow: var(--card-boxshadow),
+    circleShadow: var(--circle-boxshadow)
   ),
   dark: (
     background_color: #181c27,
     body_background_color: #181c27,
     text-color: #bebebe,
+    circleBorder: 8px solid #000,
+    shadow: var(--card-boxshadow-black),
+    circleShadow: var(--circle-boxshadow-black),
     border: 1px solid #727375
   )
 );
