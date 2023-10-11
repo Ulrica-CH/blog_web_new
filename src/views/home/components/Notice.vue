@@ -9,8 +9,6 @@ import CommonSvg from '@/components/CommonSvg/index.vue'
     <div class="notice">
      <CommonSvg icon="renzheng"/> 
      有问题您可以添加wx或者qq联系我
-
-     
     </div>
     </CommonCard>
 </template>

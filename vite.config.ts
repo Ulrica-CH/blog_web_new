@@ -96,8 +96,8 @@ export default defineConfig({
     // 本地跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
     proxy: {
       '/api': {
-        // target: 'http://118.178.178.85:8888',
-        target: 'http://localhost:8888',
+        target: 'http://118.178.178.85:8888',
+        // target: 'http://localhost:8888',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, '')
       },

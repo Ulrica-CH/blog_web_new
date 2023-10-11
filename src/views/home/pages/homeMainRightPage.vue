@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CommonArticleItem from '@/components/CommonArticleItem/index.vue'
 import homeTopInfoPage from './homeTopInfo.vue'
+import homeTodoPage from './homeTodoPage.vue'
 import type { IMainRightPageProps } from '../props'
 import CommonPagination from '@/components/CommonPagination/index.vue'
 import CommonCol from '@/components/CommonCol/index.vue'
@@ -12,6 +13,7 @@ const props = defineProps<IMainRightPageProps>()
   <CommonCol :xs="24" :sm="18" :lg="18" :xl="18">
     <div class="main-right-page animate__animated animate__fadeInRight">
       <homeTopInfoPage :isTopArticleList="isTopArticleList" />
+      <homeTodoPage/>
       <div class="article-wrap">
         <CommonArticleItem
           v-for="(item, index) in articleList"
