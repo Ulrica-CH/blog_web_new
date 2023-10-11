@@ -112,6 +112,7 @@ const technologyList = [
   .common-footer {
     // display: none;
     height: 140px;
+    font-size: 16px;
   }
 }
 </style>

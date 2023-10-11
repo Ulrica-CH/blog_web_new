@@ -40,7 +40,7 @@ const back = () => {
   <div class="mobile-menu">
     <CommonSvg icon="home" size="26" @click="showMobileMenu" />
     <div class="back" @click="back">Back</div>
-    <dir>适配正在完善...</dir>
+    <div class="wanshan">适配正在完善...</div>
     <el-switch
       v-model="isDark"
       @change="(value: boolean) => handleChangeThemes(value)"
@@ -112,6 +112,9 @@ const back = () => {
       font-size: 18px;
       font-weight: 600;
     }
+    .wanshan{
+      font-size: 16px;
+    }
   }
 
   .el-drawer {
@@ -123,6 +126,7 @@ const back = () => {
       align-items: center;
       padding: 10px 0;
       border-top: var(--base-border);
+      font-size: 18px;
     }
   }
 }
