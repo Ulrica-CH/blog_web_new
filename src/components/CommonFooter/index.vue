@@ -110,7 +110,8 @@ const technologyList = [
 }
 @media screen and (max-width: 768px) {
   .common-footer {
-    display: none;
+    // display: none;
+    height: 140px;
   }
 }
 </style>

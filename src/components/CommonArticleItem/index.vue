@@ -181,15 +181,22 @@ const { computedTime } = useComputed(props.article?.createdAt)
     border-radius: 5px 5px 8px 8px;
     // box-shadow: var(--box-mob-shadow)!important;
     @include cardShadow('shadow');
-    .article-cover{
+    .article-cover {
       position: relative !important;
       width: 100%;
     }
-    .content{
+    .content {
       position: relative !important;
+      width: 100%;
       font-size: 18px;
+      .title {
+        font-size: 18px;
+      }
+      .tags-cate-wrap {
+        font-size: 16px;
+      }
     }
-    .category{
+    .category {
       display: none;
     }
   }
