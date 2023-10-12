@@ -2,6 +2,7 @@ $themes: (
   light: (
     // background_color: var(--card-bg),
     background_color: #f0f3f9,
+    background_color-white: #fff,
     body_background_color: var(--bg-white),
     text-color: var(--base-text-color-black),
     text-color-white: var(--base-text-color-white),
@@ -12,6 +13,7 @@ $themes: (
   ),
   dark: (
     background_color: #181c27,
+    background_color-white: #181c27,
     body_background_color: #181c27,
     text-color: #bebebe,
     circleBorder: 8px solid #000,

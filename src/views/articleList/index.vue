@@ -197,13 +197,16 @@ const onFilterItemChnage = async (id: string, name: string) => {
     }
     .list {
       display: flex;
+      flex-wrap: wrap;
       padding: 10px;
       .list-item {
         @include flex();
         // height: 40px;
-        // width: 100px;
+        width: 220px;
         background-color: #fff;
-
+        @include background_color('background_color-white');
+        @include font_color('text-color');
+         @include border('border');
         margin: 0 16px 16px 0;
         padding: 20px;
         border-radius: var(--border-radius);
@@ -226,8 +229,11 @@ const onFilterItemChnage = async (id: string, name: string) => {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    .common-card {
+      width: 30%;
+    }
     .article-item {
-      width: 300px;
+      width: 100%;
       //   height: 240px;
       .img-cover {
         width: 100%;
@@ -236,6 +242,67 @@ const onFilterItemChnage = async (id: string, name: string) => {
       .title {
         margin: 16px 0;
         font-size: 20px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .article-list {
+    .type-list {
+      .title {
+        margin: 16px 0;
+        font-size: 24px;
+        font-weight: 600;
+      }
+      .list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+        .list-item {
+          @include flex();
+          // height: 40px;
+          width: 40%;
+
+          background-color: #fff;
+
+          margin: 0 16px 16px 0;
+          padding: 20px;
+          border-radius: var(--border-radius);
+          font-size: 20px;
+          font-weight: 600;
+          cursor: pointer;
+          box-shadow: var(--box-shadow);
+          transition: var(--transition-normal);
+          &:hover {
+            box-shadow: var(--main-shadow);
+          }
+          &.active {
+            background-color: var(--xy-main);
+            color: #fff;
+          }
+        }
+      }
+    }
+    .article-wrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .common-card {
+        width: 40%;
+        margin: 16px;
+      }
+      .article-item {
+        width: 100%;
+        //   height: 240px;
+        .img-cover {
+          width: 100%;
+          height: 100px;
+        }
+        .title {
+          margin: 10px 0;
+          font-size: 18px;
+        }
       }
     }
   }
