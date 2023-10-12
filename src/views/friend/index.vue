@@ -344,13 +344,14 @@ const toFriend = (url: string) => {
       }
       .content {
         width: 100%;
+        height: 100%;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         .name {
           font-size: 24px;
           font-weight: 600;
-          margin-bottom: 16px;
+          margin-bottom: 6px;
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
@@ -379,22 +380,19 @@ const toFriend = (url: string) => {
         margin-bottom: 16px;
         width: 150px !important;
         height: 60px !important;
-        .name {
-          font-size: 18px;
+        align-items: center;
+        .avatar{
+          width: 40px;
+          height: 40px;
         }
-
-        .desc {
-          transform: translateY(10px);
-          opacity: 1;
-          width: 60%;
-          font-size: 16px;
-          overflow: hidden;
-        }
-        .url {
-          opacity: 1;
-          right: 10px;
-          bottom: 10px;
-          font-size: 20px;
+        .content{
+          @include flex();
+          flex-direction: column;
+          // justify-content: flex-start;
+          align-items: flex-start;
+          .name{
+            margin-bottom: 10px;
+          }
         }
       }
     }

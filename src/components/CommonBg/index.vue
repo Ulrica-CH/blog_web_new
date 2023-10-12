@@ -58,6 +58,12 @@ const emit = defineEmits<{ onBtnClick: [] }>()
     .title {
       font-size: 18px;
     }
+    .desc{
+      font-size: 16px;
+    }
+    .apply{
+      font-size: 16px;
+    }
   }
 }
 </style>
