@@ -53,7 +53,7 @@
   /* 阴影 */
   --box-shadow: 3px 6px 6px -3px rgba(45, 45, 45, 0.05);
   --box-mob-shadow: 3px 6px 6px 6px rgba(45, 45, 45, 0.05);
-  --main-shadow: 3px 6px 6px -3px rgba(var(--r), var(--g), var(--b), 0.2);
+  --main-shadow: 4px 4px 2px  rgba(var(--r), var(--g), var(--b), 0.2);
   --card-boxshadow: 2px 2px #dce2f0, inset -2px -2px 2px 1px #fff,
     inset 2px 2px 4px 2px #dce2f0;
   --card-boxshadow-black: 2px 2px #727375, inset -2px -2px 2px 1px #000,
@@ -64,10 +64,8 @@
     inset -10px -10px 15px rgba(255, 255, 255.5),
     inset 10px 10px 15px rgba(70, 70, 70, 0.12);
 
-     --circle-boxshadow-black: -10px -10px 15px #1d1e1f,
-    10px 10px 15px #343536,
-    inset -10px -10px 15px #1d1e1f,
-    inset 10px 10px 15px #343536;
+  --circle-boxshadow-black: -10px -10px 15px #1d1e1f, 10px 10px 15px #343536,
+    inset -10px -10px 15px #1d1e1f, inset 10px 10px 15px #343536;
   /* transform */
   --transition-normal: all 0.3s;
 }
@@ -155,4 +153,9 @@ body {
     transparent
   ); */
   border-radius: 10px;
+}
+@media screen and (max-width: 768px) {
+  .main {
+    font-size: 18px !important;
+  }
 }
