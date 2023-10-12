@@ -1,6 +1,10 @@
 export function useLogData() {
   const activities = [
     {
+      content: '好久没记录了，这段时间主要完成了，1、移动端适配；2、友链功能；3、全局的样式调整；4、域名更换；5、拟态样式开发',
+      timestamp: '2023-10-10'
+    },
+    {
       content: '调整全局Loading，自定义指令图片加载Loading（后续文章记录）',
       timestamp: '2023-09-28'
     },

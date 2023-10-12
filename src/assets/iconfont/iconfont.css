@@ -20,6 +20,16 @@
   overflow: hidden;
   margin-right: 6px;
 }
+@media screen and (max-width: 768px) {
+  .icon {
+    width: 20px;
+    height: 20px;
+    vertical-align: 26px;
+    fill: currentColor;
+    overflow: hidden;
+    margin-right: 6px;
+  }
+}
 .icon-zhinengrizhiguanlipingtai:before {
   content: "\e67e";
 }

@@ -117,13 +117,12 @@ const loadingState = useLoadingStore()
       opacity: 1;
     }
   }
-
-  @media screen and (max-width: 768px) {
-    .layout {
-      margin-top: 160px !important;
-      .main {
-        margin-top: 160px !important;
-      }
+}
+@media screen and (max-width: 768px) {
+  .layout {
+    .main {
+      margin: 0;
+      padding: 10px;
     }
   }
 }

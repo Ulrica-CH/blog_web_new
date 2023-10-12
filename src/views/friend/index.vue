@@ -233,7 +233,7 @@ const handleUploadChange = (file: any) => {
           opacity: 1;
           transform: translateY(10px);
         }
-        .url{
+        .url {
           opacity: 1;
           text-decoration: dashed;
         }
@@ -253,6 +253,37 @@ const handleUploadChange = (file: any) => {
         right: 10px;
         transition: var(--transition-normal);
         font-size: 32px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .friend {
+    font-size: 18px;
+    .list-wrap {
+      margin-top: 16px;
+      justify-content: space-around;
+      .friend-item {
+        margin-bottom: 16px;
+        width: 150px !important;
+        height: 60px !important;
+        .name{
+          font-size: 18px;
+        }
+
+        .desc {
+          transform: translateY(10px);
+          opacity: 1;
+          width: 60%;
+          font-size: 16px;
+          overflow: hidden;
+        }
+        .url {
+          opacity: 1;
+          right: 10px;
+          bottom: 10px;
+          font-size: 20px;
+        }
       }
     }
   }

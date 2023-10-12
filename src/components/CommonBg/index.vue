@@ -49,4 +49,9 @@ const emit = defineEmits<{ onBtnClick: [] }>()
     cursor: pointer;
   }
 }
+@media screen and (max-width: 768px) {
+  .common-bg {
+    height: 140px;
+  }
+}
 </style>

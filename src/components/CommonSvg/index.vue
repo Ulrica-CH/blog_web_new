@@ -3,7 +3,7 @@ const props = defineProps<{ icon: string }>()
 </script>
 
 <template>
-  <svg class="icon">
+  <svg class="icon" >
     <use :xlink:href="'#icon-' + props.icon" />
   </svg>
 </template>

@@ -1,10 +1,17 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue'
+import { isMobile } from '@/utils'
+const isMobileState = ref(false)
+onMounted(() => {
+  isMobileState.value = isMobile()
+})
 interface IDialogProps {
   dialogVisible?: boolean
   title?: string
-  width: string
-  center?:boolean
+  width?: string
+  center?: boolean
 }
+
 const props = withDefaults(defineProps<IDialogProps>(), {
   dialogVisible: true,
   title: '新增',
@@ -24,7 +31,7 @@ function handleSubmit() {
   <el-dialog
     v-model="props.dialogVisible"
     :title="props.title"
-    :width="props.width"
+    :width="isMobileState ? '80%' : props.width"
     :center="props.center"
     @close="handleClose"
   >
