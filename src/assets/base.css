@@ -103,12 +103,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@font-face {
-  font-family: 'al';
-  src: url('./iconfont/Alimama_DongFangDaKai_Regular.ttf');
-  font-weight: normal;
-  font-style: normal;
-}
+
 
 ::-webkit-scrollbar {
   width: 8px;
