@@ -33,7 +33,7 @@ jobs:
         user: ${{ secrets.USER }}
         pass: ${{ secrets.PASS }}
         scp: |
-          ./dist/* => /www/wwwroot/blog/blogV3/blog/dist
+          ./dist/* => /www/wwwroot/blog/blogV3/blog
         last_ssh: |
           echo $LASTSSH 
           nginx -t

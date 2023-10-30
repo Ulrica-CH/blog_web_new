@@ -47,11 +47,11 @@ export const getRecommendArticleById = (id) => {
 };
 
 /** 根据文章id获取文章详情*/
-export const getArticleById = (params?:object) => {
+export const getArticleById = (params:number) => {
   return request<any>({
     method: 'get',
-    url: '/api/article/getArticleById',
-    params
+    url: `/api/article/getArticleById/${params}`,
+    params:{}
   })
 };
 

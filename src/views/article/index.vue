@@ -41,7 +41,7 @@ const drawerShow = ref(false)
 
 // 文章详情
 const getArticleDetails = async (id: number) => {
-  let res = await getArticleById({ id })
+  let res = await getArticleById(id)
   mdState.text = res.article_content
   articleInfo.value = res
   if (res.code == 0) {

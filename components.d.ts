@@ -15,6 +15,7 @@ declare module 'vue' {
     CommonDialog: typeof import('./src/components/CommonDialog/index.vue')['default']
     CommonFooter: typeof import('./src/components/CommonFooter/index.vue')['default']
     CommonHeader: typeof import('./src/components/CommonHeader/index.vue')['default']
+    CommonHeaderRight: typeof import('./src/components/CommonHeaderRight/index.vue')['default']
     CommonIcon: typeof import('./src/components/CommonIcon/index.vue')['default']
     CommonLoading: typeof import('./src/components/CommonLoading/index.vue')['default']
     CommonLogo: typeof import('./src/components/CommonLogo/index.vue')['default']
@@ -40,7 +41,6 @@ declare module 'vue' {
     ElTableColumn: typeof import('element-plus/es')['ElTableColumn']
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
-    ElUpload: typeof import('element-plus/es')['ElUpload']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }
