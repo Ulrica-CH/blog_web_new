@@ -1,14 +1,17 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/favicon.jpg">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MichstaBe Blog</title>
-    <meta name="keywords" content="Vue3、前后端分离、个人博客网站">
-    <meta name="description" content="一款基于Vue3、TypeScript、Vitw开发的个人博客网站，用于记录自己的前端学习、生活等">
+    <meta name="keywords" content="Vue3、前后端分离、个人博客网站" />
+    <meta
+      name="description"
+      content="一款基于Vue3、TypeScript、Vitw开发的个人博客网站，用于记录自己的前端学习、生活等"
+    />
     <script>
-      window.process = {};
+      window.process = {}
     </script>
   </head>
   <body>
@@ -23,8 +26,28 @@
           position: relative;
           justify-content: center;
           align-items: center;
+          font-family:
+            al,
+            Inter,
+            -apple-system,
+            BlinkMacSystemFont,
+            'Segoe UI',
+            Roboto,
+            Oxygen,
+            Ubuntu,
+            Cantarell,
+            'Fira Sans',
+            'Droid Sans',
+            'Helvetica Neue',
+            sans-serif;
         }
 
+        @font-face {
+          font-family: 'al';
+          src: url('./src/assets/iconfont/AlimamaDongFangDaKai-Regular.ttf');
+          font-weight: normal;
+          font-style: normal;
+        }
         .loader,
         .loader:before,
         .loader:after {
@@ -49,7 +72,7 @@
 
         .loader:before,
         .loader:after {
-          content: "";
+          content: '';
           position: absolute;
           top: 0;
         }

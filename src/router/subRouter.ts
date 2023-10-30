@@ -15,16 +15,16 @@ export const subRouter: RouteRecordRaw[] = [
     },
     component: () => import('@/views/article/index.vue')
   },
-  {
-    path: '/category',
-    meta: { title: '分类', icon: 'category' },
-    component: () => import('@/views/category/index.vue')
-  },
-  {
-    path: '/tag',
-    meta: { title: '标签', icon: 'tag' },
-    component: () => import('@/views/tag/index.vue')
-  },
+  // {
+  //   path: '/category',
+  //   meta: { title: '分类', icon: 'category' },
+  //   component: () => import('@/views/category/index.vue')
+  // },
+  // {
+  //   path: '/tag',
+  //   meta: { title: '标签', icon: 'tag' },
+  //   component: () => import('@/views/tag/index.vue')
+  // },
   {
     path: '/mine',
     meta: { title: '我的', icon: 'wode' },
@@ -44,5 +44,11 @@ export const subRouter: RouteRecordRaw[] = [
     path: '/friend',
     meta: { title: '友链', icon: 'jiaoyou' },
     component: () => import('@/views/friend/index.vue')
+  },
+  {
+    path: '/articleList',
+    meta: { title: '文章列表', icon: 'jiaoyou', hidden: true },
+
+    component: () => import('@/views/articleList/index.vue')
   }
 ]

@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import type { IHomeGetStatistic } from '@/types'
+import { useRouter } from 'vue-router'
 const { infoCount } = defineProps<{ infoCount: IHomeGetStatistic }>()
+const router = useRouter()
+const toPage = (path: string, type: string) => {
+  router.push({ path, query:{type} })
+}
 </script>
 
 <template>
@@ -9,11 +14,11 @@ const { infoCount } = defineProps<{ infoCount: IHomeGetStatistic }>()
       文章
       <span class="value">{{ infoCount.articleCount }}</span>
     </div>
-    <div class="count-item">
+    <div class="count-item" @click="toPage('/articleList','category')">
       分类
       <span class="value">{{ infoCount.categoryCount }}</span>
     </div>
-    <div class="count-item">
+    <div class="count-item" @click="toPage('/articleList','tag')">
       标签
       <span class="value">{{ infoCount.tagCount }}</span>
     </div>

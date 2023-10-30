@@ -1,34 +1,47 @@
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+const router = useRouter()
 const props = defineProps<{
-  title?: string
+  id: number
+  category_name?: string
   count?: number
   background?: string
 }>()
+
+const toArticleList = () => {
+  router.push({
+    path: '/articleList',
+    query: { id: props.id, type: 'category', name: props.category_name }
+  })
+}
 </script>
 
 <template>
   <div
     class="comm-cate-item"
     :style="{ background: props.background || '#fff' }"
+    @click="toArticleList"
   >
     <div class="title">
-      <span class="content">{{ props.title }}</span>
+      <span class="content">{{ props.category_name }}</span>
     </div>
-    <div class="count-wrap">
+    <!-- <div class="count-wrap">
       <i>1</i>
       <div class="count">{{ props.count }}</div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <style scoped lang="scss">
 .comm-cate-item {
+  margin-bottom: 16px;
+  margin-right: 16px;
   cursor: pointer;
-  width: calc(100% / 3 - 8px);
+  width: 30%;
   font-size: 22px;
   font-weight: 600;
   padding: 32px;
-  @include border('border');;
+  @include border('border');
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -41,7 +54,7 @@ const props = defineProps<{
     .title {
       .content {
         display: block;
-        transform: translateX(80%);
+        transform: translateX(200px);
       }
       &::after {
         width: 100%;
@@ -80,6 +93,11 @@ const props = defineProps<{
     .count {
       margin-left: 6px;
     }
+  }
+}
+@media screen and (max-width: 768px) {
+  .comm-cate-item {
+    width: 47%;
   }
 }
 </style>

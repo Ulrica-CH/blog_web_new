@@ -10,7 +10,9 @@ const emit = defineEmits<{ onBtnClick: [] }>()
       {{ data.title }}
     </div>
     <div class="desc">{{ data.desc }}</div>
-    <div v-if="data.showBtn" class="apply" @click="emit('onBtnClick')">{{ data.apply }}</div>
+    <div v-if="data.showBtn" class="apply" @click="emit('onBtnClick')">
+      {{ data.apply }}
+    </div>
   </div>
 </template>
 
@@ -52,6 +54,16 @@ const emit = defineEmits<{ onBtnClick: [] }>()
 @media screen and (max-width: 768px) {
   .common-bg {
     height: 140px;
+    font-size: 16px;
+    .title {
+      font-size: 18px;
+    }
+    .desc{
+      font-size: 16px;
+    }
+    .apply{
+      font-size: 16px;
+    }
   }
 }
 </style>
