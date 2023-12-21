@@ -26,7 +26,7 @@ onMounted(async () => {
 
 <template>
   <div class="home">
-    <homeCountPage :infoCount="infoCount"/>
+    <!-- <homeCountPage :infoCount="infoCount" :config="config"/> -->
    
     <!-- home 顶部信息 -->
     <homeNoticePage :notice="config" />

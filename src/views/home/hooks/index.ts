@@ -130,9 +130,9 @@ export function useRightConfig() {
 export function useAvatarInfo() {
   const attrs = useAttrs()
   const countList = reactive<countItem[]>([
-    { label: '文章', key: 'articleCount', count: 0 },
-    { label: ' 分类', key: 'categoryCount', count: 0 },
-    { label: '标签', key: 'tagCount', count: 0 }
+    { label: '文章', key: 'articleCount', count: 0, toKey: '' },
+    { label: ' 分类', key: 'categoryCount', count: 0, toKey: 'category' },
+    { label: '标签', key: 'tagCount', count: 0, toKey: 'tag' }
   ])
   type HomeStatisticUpdate = {
     [key: string]: any
@@ -142,6 +142,7 @@ export function useAvatarInfo() {
     label: string
     key: string
     count: number
+    toKey: string
   }
 
   watch(

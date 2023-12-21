@@ -213,7 +213,7 @@ const toFriend = (url: string) => {
         @click="toFriend(item.url)"
       >
         <div class="avatar">
-          <el-image
+          <!-- <el-image
             style="width: 100%; height: 100%"
             :src="item.site_avatar"
             :fit="'fit'"
@@ -223,7 +223,7 @@ const toFriend = (url: string) => {
                 <el-icon><icon-picture /></el-icon>
               </div>
             </template>
-          </el-image>
+          </el-image> -->
         </div>
         <div class="content">
           <div class="name">{{ item.site_name }}</div>
@@ -291,7 +291,7 @@ const toFriend = (url: string) => {
   .list-wrap {
     @include flex();
     padding: 10px;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin-top: 16px;
 

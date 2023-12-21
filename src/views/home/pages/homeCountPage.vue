@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { IHomeGetStatistic } from '@/types'
+import type { IConfig, IHomeGetStatistic } from '@/types'
 import { useRouter } from 'vue-router'
-const { infoCount } = defineProps<{ infoCount: IHomeGetStatistic }>()
+const { infoCount,config } = defineProps<{ infoCount: IHomeGetStatistic,config:IConfig }>()
 const router = useRouter()
 const toPage = (path: string, type: string) => {
   router.push({ path, query:{type} })
@@ -22,14 +22,18 @@ const toPage = (path: string, type: string) => {
       标签
       <span class="value">{{ infoCount.tagCount }}</span>
     </div>
-    <div class="count-item">
+    <!-- <div class="count-item">
       友链
       <span class="value">0</span>
+    </div> -->
+    <!-- <div class="count-item">
+      运行
+      <span class="value">{{ config.view_time }}</span>
     </div>
     <div class="count-item">
-      运行
-      <span class="value">26</span>
-    </div>
+      访问
+      <span class="value">{{ config.view_time }}</span>
+    </div> -->
   </div>
 </template>
 
@@ -44,8 +48,8 @@ const toPage = (path: string, type: string) => {
   .count-item {
     @include flex();
     flex-direction: column;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
     @include circleBorder('circleBorder');
     @include circleShadow('circleShadow');

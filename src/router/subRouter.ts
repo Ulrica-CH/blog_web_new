@@ -35,11 +35,11 @@ export const subRouter: RouteRecordRaw[] = [
     meta: { title: '建站', icon: 'zhinengrizhiguanlipingtai' },
     component: () => import('@/views/log/index.vue')
   },
-  {
-    path: '/study',
-    meta: { title: '学习记录', icon: 'xuexizhongxin' },
-    component: () => import('@/views/study/index.vue')
-  },
+  // {
+  //   path: '/study',
+  //   meta: { title: '学习记录', icon: 'xuexizhongxin' },
+  //   component: () => import('@/views/study/index.vue')
+  // },
   {
     path: '/friend',
     meta: { title: '友链', icon: 'jiaoyou' },

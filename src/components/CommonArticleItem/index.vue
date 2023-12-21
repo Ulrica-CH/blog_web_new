@@ -87,7 +87,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
     .article-cover {
       // transform: scale(1.2);
       .cover_img {
-        transform: scale(1.2);
+        transform: scale(1.2) rotate(6deg);
       }
     }
   }

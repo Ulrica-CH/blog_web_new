@@ -1,9 +1,15 @@
 <script setup lang="ts">
 import CommonCard from '@/components/CommonCard/index.vue'
+import { useRouter } from 'vue-router'
 import { useAvatarInfo } from '../hooks'
 import type { IAvatarInfo } from '../props'
 const props = defineProps<IAvatarInfo>()
 const { countList } = useAvatarInfo()
+
+const router = useRouter()
+const toPage = (path: string, type: string) => {
+  router.push({ path, query: { type } })
+}
 </script>
 
 <template>
@@ -22,6 +28,7 @@ const { countList } = useAvatarInfo()
         <div
           v-for="(item, index) in countList"
           :key="item.label"
+          @click="toPage('/articleList', item.toKey)"
           class="category-item"
         >
           <span class="label">{{ item.label }}</span>

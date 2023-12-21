@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import CommonCard from '@/components/CommonCard/index.vue'
 import { getAllTag } from '@/api/tag'
+
 import { onMounted, ref } from 'vue'
 import type { ITags } from '@/types'
 const tagsList = ref<ITags[]>([])
 const _getAllTag = async () => {
   tagsList.value = await getAllTag()
 }
+
 onMounted(async () => {
   await _getAllTag()
 })
@@ -15,9 +17,13 @@ onMounted(async () => {
 <template>
   <CommonCard>
     <div class="tags">
-      <span v-for="(item, index) in tagsList" class="tag-item" :key="index">#{{
-        item.tag_name
-      }}</span>
+      <span
+        v-for="(item, index) in tagsList"
+        class="tag-item"
+        :key="index"
+      
+        >#{{ item.tag_name }}</span
+      >
     </div>
   </CommonCard>
 </template>
@@ -26,14 +32,14 @@ onMounted(async () => {
 .tags {
   display: flex;
   flex-wrap: wrap;
-  .tag-item{
+  .tag-item {
     margin: 2px;
     padding: 6px;
-    @include border('border');;
+    @include border('border');
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition-normal);
-    &:hover{
+    &:hover {
       transform: scale(1.12);
       border-color: var(--xy-main);
     }
