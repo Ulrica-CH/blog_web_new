@@ -23,6 +23,7 @@ const [activities] = useLogData()
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  font-size: 18px;
 
   .el-timeline {
     width: var(--w-100-percent);
@@ -30,12 +31,13 @@ const [activities] = useLogData()
       padding: 10px 0;
       :deep(.el-timeline-item__wrapper) {
         .el-card {
+          border: none;
           padding: 10px;
-          background: linear-gradient(
-            120deg,
-            rgba(91, 39, 255, 1) 0%,
-            rgba(0, 212, 255, 1) 100%
-          );
+          @include background_color('background_color');
+          @include font_color('text-color');
+          border-radius: 10px;
+
+          @include cardShadow('shadow');
           color: #fff;
         }
       }

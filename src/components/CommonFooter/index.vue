@@ -54,7 +54,7 @@ const technologyList = [
   height: 180px;
   @include background_color('background_color');
   @include font_color('text-color');
-  @include border('border');
+  // @include border('border');
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
   font-size: 20px;
@@ -64,6 +64,9 @@ const technologyList = [
     margin-right: 16px;
     @include background_color('background_color');
     @include font_color('text-color');
+    padding: 12px;
+    border-radius: 10px;
+    @include cardShadow('shadow');
     transition: var(--transition-normal);
     &:hover {
       color: var(--xy-main);
@@ -76,10 +79,10 @@ const technologyList = [
       display: inline-block;
       margin: 10px;
       padding: 10px;
-      background-color: var(--main);
-      // color: var( --base-text-color-white);
-      border-radius: var(--border-radius);
-      cursor: pointer;
+      @include background_color('background_color');
+      @include font_color('text-color');
+      border-radius: 10px;
+      @include cardShadow('shadow');
       transition: var(--transition-normal);
 
       &:nth-child(even) {

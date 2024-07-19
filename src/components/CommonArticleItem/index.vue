@@ -74,7 +74,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
   @include background_color('background_color');
   @include font_color('text-color');
   border-radius: var(--border-radius);
-  @include border('border');
+  // @include border('border');
   @include cardShadow('shadow');
   overflow: hidden;
   transition: var(--transition-normal);
@@ -174,7 +174,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
     @include background_color('background_color');
     @include font_color('text-color');
     border-radius: var(--border-radius);
-    @include border('border');
+    // @include border('border');
     overflow: hidden;
     transition: var(--transition-normal);
     cursor: pointer;

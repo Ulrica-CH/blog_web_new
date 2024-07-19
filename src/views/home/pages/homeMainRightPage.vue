@@ -12,7 +12,7 @@ const props = defineProps<IMainRightPageProps>()
 <template>
   <CommonCol :xs="24" :sm="18" :lg="18" :xl="18">
     <div class="main-right-page animate__animated animate__fadeInRight">
-      <homeTopInfoPage :isTopArticleList="isTopArticleList" />
+      <!-- <homeTopInfoPage :isTopArticleList="isTopArticleList" /> -->
       <!-- <homeTodoPage/> -->
       <div class="article-wrap">
         <CommonArticleItem
@@ -30,10 +30,13 @@ const props = defineProps<IMainRightPageProps>()
 <style scoped lang="scss">
 .main-right-page {
   flex: 1;
+  height: 100%;
   @include flex(space-between, _, column);
-  flex-wrap: wrap;
-  // width: var(--w-100-persent);
+  // flex-wrap: wrap;
+  flex-direction: column;
   .article-wrap {
+    height: 100%;
+    width: 100%;
     @include flex(space-between);
     flex-wrap: wrap;
     // width: var(--w-100-persent);

@@ -12,8 +12,7 @@ import skillPage from './components/skill.vue'
     </div>
 
     <div class="about-card">
-      关于这个网站：目前不打算去做点赞评论，友链等。主要是记录自己的学习，笔记等，搞太多到是失了本心。<br />
-      利用业余时间开发，只能慢慢完善了。
+      关于这个网站：主要是记录自己的学习，笔记等，  利用业余时间开发。<br />
     </div>
 
     <skillPage />
@@ -27,12 +26,10 @@ import skillPage from './components/skill.vue'
   // height: calc(100vh - 220px);
   .author-card {
     width: 100%;
-    background: linear-gradient(
-      120deg,
-      rgba(91, 39, 255, 1) 0%,
-      rgba(0, 212, 255, 1) 100%
-    );
-    color: #fff;
+    @include background_color('background_color');
+    @include font_color('text-color');
+    border-radius: 10px;
+    @include cardShadow('shadow');
     margin-bottom: 16px;
     padding: 0px 16px;
     border-radius: 16px;
@@ -54,15 +51,24 @@ import skillPage from './components/skill.vue'
   }
   .about-card {
     width: 100%;
-    background: linear-gradient(
-      280deg,
-      rgba(91, 39, 255, 1) 50%,
-      rgba(0, 212, 255, 1) 100%
-    );
-    color: #fff;
+    @include background_color('background_color');
+    @include font_color('text-color');
+    border-radius: 10px;
+    @include cardShadow('shadow');
     margin-bottom: 16px;
     padding: 20px 16px;
     border-radius: 16px;
+  }
+  :deep(.el-card) {
+    @include background_color('background_color');
+    @include font_color('text-color');
+    border-radius: 10px;
+    @include cardShadow('shadow');
+    border: none;
+    .el-card__header{
+      // border: none;
+      border-bottom: 1px solid #230506;
+    }
   }
 }
 @media screen and (max-width: 768px) {

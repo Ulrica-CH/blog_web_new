@@ -33,5 +33,27 @@ const handleCurrentChange = (val: number) => {
   @include flex();
   width: 100%;
   padding: 20px;
+  @include background_color('background_color');
+  @include font_color('text-color');
+  border-radius: 10px;
+
+  @include cardShadow('shadow');
+  :deep(.el-pagination) {
+    .number,
+    .btn-next,
+    .btn-prev,
+    .btn-quicknext,
+    .el-input__inner {
+      @include font_color('text-color');
+      // border-radius: 10px;
+      @include background_color('background_color');
+      @include cardShadow('shadow');
+    }
+    .el-input__wrapper {
+      background: transparent !important;
+      border:none !important;
+      box-shadow: none !important;
+    }
+  }
 }
 </style>

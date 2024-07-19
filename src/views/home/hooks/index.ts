@@ -30,7 +30,7 @@ export function useArticle() {
   /** 文章 */
   const params = reactive({
     current: 1, // 当前页
-    size: 6, // 每页条目数
+    size: 3, // 每页条目数
     total: 0
   })
   const articleList = ref<IArticle[]>([])

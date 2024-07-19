@@ -204,9 +204,11 @@ const onFilterItemChnage = async (id: string, name: string) => {
         // height: 40px;
         width: 220px;
         background-color: #fff;
-        @include background_color('background_color-white');
+        @include background_color('background_color');
         @include font_color('text-color');
-         @include border('border');
+        border-radius: 10px;
+
+        @include cardShadow('shadow');
         margin: 0 16px 16px 0;
         padding: 20px;
         border-radius: var(--border-radius);
@@ -219,15 +221,16 @@ const onFilterItemChnage = async (id: string, name: string) => {
           box-shadow: var(--main-shadow);
         }
         &.active {
-          background-color: var(--xy-main);
-          color: #fff;
+          // box-shadow: var(--main-shadow);
+          // background: #000 !important;
+          color: #2862FF;
         }
       }
     }
   }
   .article-wrap {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-wrap: wrap;
     .common-card {
       width: 30%;

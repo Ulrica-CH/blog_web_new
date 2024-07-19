@@ -83,7 +83,7 @@ const back = () => {
   @include background_color('body_background_color');
   @include font_color('text-color');
   box-shadow: var(--box-shadow);
-  @include border('border');
+  // @include border('border');
 
   .header {
     @include flex($justify: space-between);

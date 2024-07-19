@@ -91,7 +91,7 @@ export default defineConfig({
     // 是否开启 https
     https: false,
     // 端口号
-    port: 8080,
+    port: 8090,
     // host: '127.0.0.1',
     // 本地跨域代理 https://cn.vitejs.dev/config/server-options.html#server-proxy
     proxy: {

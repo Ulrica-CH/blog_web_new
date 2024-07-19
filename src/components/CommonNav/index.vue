@@ -18,14 +18,14 @@ const { isDark, handleChangeThemes } = changeTheme()
       @click="toPath(item.path)"
     >
       <CommonSvg :icon="item.meta?.icon" />
-      <RouterLink class="router-link" :to="item.path">{{
+      <!-- <RouterLink class="router-link" :to="item.path">{{
         item.meta?.title
-      }}</RouterLink>
+      }}</RouterLink> -->
     </div>
-    <el-switch
+    <!-- <el-switch
       v-model="isDark"
       @change="(value: boolean) => handleChangeThemes(value)"
-    />
+    /> -->
   </div>
 </template>
 

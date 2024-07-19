@@ -304,7 +304,7 @@ const toFriend = (url: string) => {
       @include font_color('text-color');
       border-radius: 10px;
       transition: var(--transition-normal);
-      @include border('border');
+      // @include border('border');
       // @include cardShadow('shadow');
       box-shadow: var(--main-shadow);
       margin: 0 16px 16px 0;

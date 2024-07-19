@@ -1,7 +1,11 @@
 $themes: (
   light: (
     // background_color: var(--card-bg),
-    background_color: #f0f3f9,
+    // background_color: #f0f3f9,
+    background_color: linear-gradient(270deg, 
+    rgba(36, 0, 0, 1) 0%, 
+    rgba(9, 90, 121, 1) 100%, 
+    rgba(0, 215, 255, 1) 100%),
     background_color-white: #fff,
     body_background_color: var(--bg-white),
     text-color: var(--base-text-color-black),

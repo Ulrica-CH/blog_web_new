@@ -35,7 +35,7 @@ onMounted(async () => {
   .tag-item {
     margin: 2px;
     padding: 6px;
-    @include border('border');
+    // @include border('border');
     border-radius: var(--border-radius);
     cursor: pointer;
     transition: var(--transition-normal);

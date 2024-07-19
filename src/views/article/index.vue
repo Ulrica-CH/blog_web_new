@@ -181,10 +181,14 @@ const getImg = () => {
     }
     .category {
       @include positionA(20px, none, none, 20px);
+      @include cardShadow('shadow');
     }
     .tags-wrap {
       @include positionA(20px, none, none, 140px);
-      color: var(--base-text-color-white);
+      @include background_color('background_color');
+      @include font_color('text-color');
+      @include cardShadow('shadow');
+      // color: var(--base-text-color-white);
     }
     .time-wrap {
       margin-bottom: 36px;
@@ -194,8 +198,7 @@ const getImg = () => {
     }
     .comm-item {
       padding: 10px;
-      // background: rgba(255,255,255,.2);
-      // background: var(--main);
+
       background: var(--article-comm-item-bgc);
       color: #fff;
       border-radius: var(--border-radius);
@@ -209,11 +212,14 @@ const getImg = () => {
     padding: 0 10px;
     @include background_color('background_color');
     @include font_color('text-color');
-    @include border('border');
+    @include cardShadow('shadow');
+    // @include border('border');
+    border: none;
 
     .md-preview-v3 {
       @include background_color('background_color');
       @include font_color('text-color');
+      border: none;
     }
   }
 }
@@ -223,7 +229,9 @@ const getImg = () => {
   padding: 1rem 0.5rem;
   @include background_color('background_color');
   @include font_color('text-color');
-  @include border('border');
+  @include cardShadow('shadow');
+  // @include border('border');
+  border: none;
 
   &__box {
     scrollbar-width: none;

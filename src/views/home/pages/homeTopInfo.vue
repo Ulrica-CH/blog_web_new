@@ -40,7 +40,7 @@ const getImg = (item: any) => `url(${item.article_cover})`
   }
   .right {
     background: var(--card-bg);
-    @include border('border');
+    // @include border('border');
     border-radius: var(--border-radius);
     transition: var(--transition-normal);
     cursor: pointer;

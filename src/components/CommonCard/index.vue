@@ -17,10 +17,11 @@ defineProps<{ noPadding?: boolean; title?: string }>()
   @include background_color('background_color');
   @include font_color('text-color');
   border-radius: 10px;
-  transition: var(--transition-normal);
-  @include border('border');
   @include cardShadow('shadow');
 
+  transition: var(--transition-normal);
+  // @include border('border');
+  
   height: auto;
   &:hover {
     // border: var(--hover-border);
