@@ -30,6 +30,7 @@ const loadingState = useLoadingStore()
 <style scoped lang="scss">
 .layout {
   width: 100%;
+ 
   box-sizing: border-box;
   @include background_color('body_background_color');
   @include font_color('text-color');
@@ -95,6 +96,7 @@ const loadingState = useLoadingStore()
   .main {
     width: 100%;
     margin: 60px auto 0;
+    min-height: calc(100vh - 250px);
     padding-top: 16px;
     box-sizing: border-box;
     // background-color: #f4f6fc;

@@ -14,7 +14,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
       v-image
       :data-src="article.article_cover"
       class="article-cover"
-      :style="{ position: 'absolute', left: props.index % 2 === 0 && 0 }"
+    
     >
       <img
         :src="article?.article_cover"
@@ -31,7 +31,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
       <div class="tags-cate-wrap">
         <div class="tags item">
           <span
-            v-for="(item, index) in props.article?.tagNameList"
+            v-for="(item, index) in props.article?.tagNameList.splice(0, 1)"
             :key="index"
             class="tag"
           >
@@ -46,9 +46,9 @@ const { computedTime } = useComputed(props.article?.createdAt)
         </div>
       </div>
 
-      <div class="desc">
+      <!-- <div class="desc">
         {{ props.article?.article_description }}
-      </div>
+      </div> -->
     </div>
 
     <div
@@ -67,14 +67,16 @@ const { computedTime } = useComputed(props.article?.createdAt)
 <style scoped lang="scss">
 .comm-artice-item {
   position: relative;
+  flex: 0 0 48%;
   @include flex($justify: space-between);
+ flex-direction: column;
   width: 100%;
-  height: 220px;
+  height: 260px;
   margin-bottom: var(--margin-bottom-16);
   @include background_color('background_color');
   @include font_color('text-color');
   border-radius: var(--border-radius);
-  // @include border('border');
+ 
   @include cardShadow('shadow');
   overflow: hidden;
   transition: var(--transition-normal);
@@ -85,6 +87,7 @@ const { computedTime } = useComputed(props.article?.createdAt)
     // border: var(--hover-border);
 
     .article-cover {
+       flex-direction: column;
       // transform: scale(1.2);
       .cover_img {
         transform: scale(1.2) rotate(6deg);
@@ -95,8 +98,9 @@ const { computedTime } = useComputed(props.article?.createdAt)
   .article-cover {
     position: relative;
     right: 0;
-    width: 45%;
-    height: 100%;
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
 
     transition: var(--transition-normal);
     overflow: hidden;
@@ -110,10 +114,10 @@ const { computedTime } = useComputed(props.article?.createdAt)
     }
   }
   .content {
-    position: absolute;
+    // position: absolute;
     @include flex($direction: column);
-    width: 55%;
-    height: 100%;
+    width: 100%;
+    height: 50%;
   }
   .item {
     margin: 10px 0;

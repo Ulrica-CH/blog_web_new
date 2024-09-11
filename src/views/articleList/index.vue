@@ -230,10 +230,13 @@ const onFilterItemChnage = async (id: string, name: string) => {
   }
   .article-wrap {
     display: flex;
-    justify-content: flex-start;
+    // justify-content: space-between;
     flex-wrap: wrap;
     .common-card {
-      width: 30%;
+      flex: 0 0 31%;
+      // flex-wrap: wrap;
+      // width: 30%;
+      margin: 10px;
     }
     .article-item {
       width: 100%;
