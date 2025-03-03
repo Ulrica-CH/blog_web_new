@@ -13,7 +13,15 @@ const technologyList = [
 
 <template>
   <div class="common-footer">
-    <div class="item mb-16">MichstaBe | 个人博客 | ICP 备案号: <a style="color: var(--base-text-color-white);" href="https://beian.miit.gov.cn/" target="_blank">蒙ICP备2021004700号-1</a></div>
+    <div class="item mb-16">
+      MichstaBe | 个人博客 | ICP 备案号:
+      <a
+        style="color: var(--base-text-color-white)"
+        href="https://beian.miit.gov.cn/"
+        target="_blank"
+        >蒙ICP备2021004700号-1</a
+      >
+    </div>
 
     <div class="item mb-16">
       参考：

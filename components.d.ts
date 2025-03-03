@@ -7,6 +7,13 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    BCard1: typeof import('./src/components/BCard1/index.vue')['default']
+    BCard2: typeof import('./src/components/BCard2/index.vue')['default']
+    BCard3: typeof import('./src/components/BCard3/index.vue')['default']
+    BCard4: typeof import('./src/components/BCard4/index.vue')['default']
+    Button1: typeof import('./src/components/Button1/index.vue')['default']
+    Button2: typeof import('./src/components/Button2/index.vue')['default']
+    Clock: typeof import('./src/components/clock/index.vue')['default']
     CommonArticleItem: typeof import('./src/components/CommonArticleItem/index.vue')['default']
     CommonBg: typeof import('./src/components/CommonBg/index.vue')['default']
     CommonCard: typeof import('./src/components/CommonCard/index.vue')['default']
@@ -22,6 +29,7 @@ declare module 'vue' {
     CommonNav: typeof import('./src/components/CommonNav/index.vue')['default']
     CommonPagination: typeof import('./src/components/CommonPagination/index.vue')['default']
     CommonSvg: typeof import('./src/components/CommonSvg/index.vue')['default']
+    copy: typeof import('./src/components/BCard1 copy/index.vue')['default']
     ElAffix: typeof import('element-plus/es')['ElAffix']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElCard: typeof import('element-plus/es')['ElCard']
@@ -44,8 +52,10 @@ declare module 'vue' {
     ElTimeline: typeof import('element-plus/es')['ElTimeline']
     ElTimelineItem: typeof import('element-plus/es')['ElTimelineItem']
     ElUpload: typeof import('element-plus/es')['ElUpload']
+    FrostedGlassCard: typeof import('./src/components/FrostedGlassCard/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ToolTip1: typeof import('./src/components/ToolTip1/index.vue')['default']
     Upload: typeof import('./src/components/CommonUpload/upload.vue')['default']
   }
 }

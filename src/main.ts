@@ -7,6 +7,7 @@ import '@/assets/main.css'
 import '@/assets/iconfont/iconfont.js'
 import '@/assets/iconfont/iconfont.css'
 import 'animate.css'
+import 'vue-amazing-ui/css'
 import image from './directives/imageLoading'
 import registerIcons from '@/global/register-icons'
 const app = createApp(App)

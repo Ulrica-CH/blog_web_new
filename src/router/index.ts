@@ -4,6 +4,10 @@ import {subRouter} from './subRouter'
 const router = createRouter({
   history: createWebHashHistory(),
   routes: [
+    // {
+    //   path: '/',
+    //   component: () => import('@/views/index/index.vue')
+    // },
     {
       path: '/',
       component: Layout,

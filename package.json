@@ -24,9 +24,11 @@
     "image-conversion": "^2.1.1",
     "md-editor-v3": "^2.7.2",
     "pinia": "^2.1.6",
+    "pinyin-pro": "^3.24.2",
     "postcss-px-to-viewport": "^1.1.1",
     "qs": "^6.11.2",
     "vue": "^3.3.4",
+    "vue-amazing-ui": "^1.6.7",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
